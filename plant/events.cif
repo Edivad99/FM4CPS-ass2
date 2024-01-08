@@ -6,4 +6,4 @@ controllable event UP_B, DOWN_B, RIGHT_B, LEFT_B;
 
 
 //uncontrollable event yellow_enters;
-uncontrollable event un_UP, un_DOWN, un_RIGTH, un_LEFT;
+uncontrollable  event  RANDOM_YELLOW, RANDOM_BLUE;

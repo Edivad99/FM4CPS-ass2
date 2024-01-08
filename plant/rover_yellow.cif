@@ -2,6 +2,8 @@ import "events.cif";
 
 plant automaton RoverYellow:
 
+    //uncontrollable event un_UP, un_DOWN, un_RIGTH, un_LEFT;
+    //uncontrollable  event  RANDOM;
     location X0Y0: initial; marked;
         edge YELLOW_CHARGING;
         edge RIGHT_Y goto X1Y0;
@@ -34,10 +36,14 @@ plant automaton RoverYellow:
 
     // -----------------------------
     location X1Y1: marked;
-        edge un_UP goto X0Y1;
+        /*edge un_UP goto X0Y1;
         edge un_DOWN goto X2Y1;
         edge un_RIGTH goto X1Y0;
-        edge un_LEFT goto X1Y2;
+        edge un_LEFT goto X1Y2;*/
+        edge RANDOM_YELLOW goto X0Y1;
+        edge RANDOM_YELLOW goto X2Y1;
+        edge RANDOM_YELLOW goto X1Y0;
+        edge RANDOM_YELLOW goto X1Y2;
     // -----------------------------
 
     location X2Y1: marked;

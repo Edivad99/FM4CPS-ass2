@@ -1,7 +1,8 @@
 import "events.cif";
 
 plant automaton RoverBlue:
-
+    //uncontrollable event un_UP, un_DOWN, un_RIGTH, un_LEFT;
+    //uncontrollable  event  RANDOM;
     location X0Y0: marked;
         edge RIGHT_B goto X1Y0;
         edge DOWN_B goto X0Y1;
@@ -33,10 +34,10 @@ plant automaton RoverBlue:
 
     // -----------------------------
     location X1Y1: marked;
-        edge un_UP goto X0Y1;
-        edge un_DOWN goto X2Y1;
-        edge un_RIGTH goto X1Y0;
-        edge un_LEFT goto X1Y2;
+        edge RANDOM_BLUE goto X0Y1;
+        edge RANDOM_BLUE goto X2Y1;
+        edge RANDOM_BLUE goto X1Y0;
+        edge RANDOM_BLUE goto X1Y2;
     // -----------------------------
 
     location X2Y1: marked;

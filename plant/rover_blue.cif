@@ -46,6 +46,7 @@ plant automaton RoverBlue:
         edge LEFT_B goto X1Y1;
 
     location X3Y1: initial; marked;
+        edge BLUE_CHARGING;
         edge UP_B goto X3Y0;
         edge DOWN_B goto X3Y2;
         edge RIGHT_B goto X4Y1;

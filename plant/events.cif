@@ -1,4 +1,4 @@
-uncontrollable event charge1, charge2;
+controllable event YELLOW_CHARGING, BLUE_CHARGING;
 
 
 controllable event UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y;

@@ -3,6 +3,7 @@ import "events.cif";
 plant automaton RoverYellow:
 
     location X0Y0: initial; marked;
+        edge YELLOW_CHARGING;
         edge RIGHT_Y goto X1Y0;
         edge DOWN_Y goto X0Y1;
 

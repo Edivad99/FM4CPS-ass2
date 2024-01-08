@@ -7,26 +7,26 @@ plant automaton BatteryBlue:
 
     location FIVE:
         edge UP_B, DOWN_B, RIGHT_B, LEFT_B goto FOUR;
-        edge charge2 goto CHARGE;
+        edge BLUE_CHARGING goto CHARGE;
 
     location FOUR:
         edge UP_B, DOWN_B, RIGHT_B, LEFT_B goto THREE;
-        edge charge2 goto CHARGE;
+        edge BLUE_CHARGING goto CHARGE;
 
     location THREE:
         edge UP_B, DOWN_B, RIGHT_B, LEFT_B goto TWO;
-        edge charge2 goto CHARGE;
+        edge BLUE_CHARGING goto CHARGE;
 
     location TWO:
         edge UP_B, DOWN_B, RIGHT_B, LEFT_B goto ONE;
-        edge charge2 goto CHARGE;
+        edge BLUE_CHARGING goto CHARGE;
 
     location ONE:
         edge UP_B, DOWN_B, RIGHT_B, LEFT_B goto EMPTY;
-        edge charge2 goto CHARGE;
+        edge BLUE_CHARGING goto CHARGE;
 
     location EMPTY:
-        edge charge2 goto CHARGE;
+        edge BLUE_CHARGING goto CHARGE;
 
 end
 

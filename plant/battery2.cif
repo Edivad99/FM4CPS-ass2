@@ -1,0 +1,43 @@
+import "events.cif";
+
+plant automaton Battery2:
+
+    location CHARGE: initial; marked;
+        edge consume2 goto FIVE;
+
+    location FIVE:
+        edge consume2 goto FOUR;
+        edge charge2 goto CHARGE;
+
+    location FOUR:
+        edge consume2 goto THREE;
+        edge charge2 goto CHARGE;
+
+    location THREE:
+        edge consume2 goto TWO;
+        edge charge2 goto CHARGE;
+
+    location TWO:
+        edge consume2 goto ONE;
+        edge charge2 goto CHARGE;
+
+    location ONE:
+        edge consume2 goto EMPTY;
+        edge charge2 goto CHARGE;
+
+    location EMPTY:
+        edge charge2 goto CHARGE;
+
+end
+
+svgfile "gui.svg";
+
+svgout id "rover_blue_battery_level_1" attr "visibility" value if Battery2.ONE or Battery2.TWO or Battery2.THREE or Battery2.FOUR or Battery2.FIVE or Battery2.CHARGE: "visible" else "hidden" end;
+svgout id "rover_blue_battery_level_2" attr "visibility" value if Battery2.TWO or Battery2.THREE or Battery2.FOUR or Battery2.FIVE or Battery2.CHARGE: "visible" else "hidden" end;
+svgout id "rover_blue_battery_level_3" attr "visibility" value if Battery2.THREE or Battery2.FOUR or Battery2.FIVE or Battery2.CHARGE: "visible" else "hidden" end;
+svgout id "rover_blue_battery_level_4" attr "visibility" value if Battery2.FOUR or Battery2.FIVE or Battery2.CHARGE: "visible" else "hidden" end;
+svgout id "rover_blue_battery_level_5" attr "visibility" value if Battery2.FIVE or Battery2.CHARGE: "visible" else "hidden" end;
+svgout id "rover_blue_battery_level_6" attr "visibility" value if Battery2.CHARGE: "visible" else "hidden" end;
+
+
+

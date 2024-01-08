@@ -1,0 +1,3 @@
+uncontrollable event consume1, consume2, charge1, charge2;
+
+//uncontrollable event yellow_enters;

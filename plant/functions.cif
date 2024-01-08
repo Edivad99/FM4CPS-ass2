@@ -1,5 +1,0 @@
-func string translations(int x ; int y) :
-    int new_x = 50 * x;
-    int new_B = 50 * y;
-    return "translate(" + <string>new_x + "," + <string>new_B + ")";
-end

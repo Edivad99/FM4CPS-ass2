@@ -1,82 +1,81 @@
 import "events.cif";
-import "functions.cif";
 
 plant automaton RoverBlue:
 
-    location X0Y0: initial; marked;
+    location X0Y0: marked;
         edge RIGHT_B goto X1Y0;
         edge DOWN_B goto X0Y1;
 
-    location X1Y0:
+    location X1Y0: marked;
         edge RIGHT_B goto X2Y0;
         edge LEFT_B goto X0Y0;
         edge DOWN_B goto X1Y1;
 
-    location X2Y0:
+    location X2Y0: marked;
         edge RIGHT_B goto X3Y0;
         edge LEFT_B goto X1Y0;
         edge DOWN_B goto X2Y1;
 
-    location X3Y0:
+    location X3Y0: marked;
         edge RIGHT_B goto X4Y0;
         edge LEFT_B goto X2Y0;
         edge DOWN_B goto X3Y1;
 
-    location X4Y0:
+    location X4Y0: marked;
         edge LEFT_B goto X3Y0;
         edge DOWN_B goto X4Y1;
 
 
-    location X0Y1:
+    location X0Y1: marked;
         edge UP_B goto X0Y0;
         edge DOWN_B goto X0Y2;
         edge RIGHT_B goto X1Y1;
 
     // -----------------------------
-    location X1Y1:
+    location X1Y1: marked;
         edge UP_B;
         //edge consume1 goto FOUR;
         //edge charge1 goto CHARGE;
     // -----------------------------
 
-    location X2Y1:
+    location X2Y1: marked;
         edge UP_B goto X2Y0;
         edge DOWN_B goto X2Y2;
         edge RIGHT_B goto X3Y1;
         edge LEFT_B goto X1Y1;
 
-    location X3Y1:
+    location X3Y1: initial; marked;
         edge UP_B goto X3Y0;
         edge DOWN_B goto X3Y2;
         edge RIGHT_B goto X4Y1;
         edge LEFT_B goto X2Y1;
 
-    location X4Y1:
+    location X4Y1: marked;
         edge UP_B goto X4Y0;
         edge DOWN_B goto X4Y2;
         edge LEFT_B goto X3Y1;
 
 
-    location X0Y2:
+    location X0Y2: marked;
         edge UP_B goto X0Y1;
         edge RIGHT_B goto X1Y2;
 
-    location X1Y2:
+    location X1Y2: marked;
         edge UP_B goto X1Y1;
         edge RIGHT_B goto X2Y2;
         edge LEFT_B goto X0Y2;
 
-    location X2Y2:
+    location X2Y2: marked;
         edge UP_B goto X2Y1;
         edge RIGHT_B goto X3Y2;
         edge LEFT_B goto X1Y2;
 
-    location X3Y2:
+    location X3Y2: marked;
         edge UP_B goto X3Y1;
         edge RIGHT_B goto X4Y2;
         edge LEFT_B goto X2Y2;
 
-    location X4Y2:
+    location X4Y2: marked;
         edge UP_B goto X4Y1;
         edge LEFT_B goto X3Y2;
 
@@ -90,37 +89,42 @@ svgfile "gui.svg";
 svgout id "rover_blue" attr "transform" value
 
     if RoverBlue.X0Y0:
-        translations(0,0)
+        translations_blue(0,0)
     elif RoverBlue.X1Y0:
-        translations(1,0)
+        translations_blue(1,0)
     elif RoverBlue.X2Y0:
-        translations(2,0)
+        translations_blue(2,0)
     elif RoverBlue.X3Y0:
-        translations(3,0)
+        translations_blue(3,0)
     elif RoverBlue.X4Y0:
-        translations(4,0)
+        translations_blue(4,0)
     elif RoverBlue.X0Y1:
-        translations(0,1)
+        translations_blue(0,1)
     elif RoverBlue.X1Y1:
-        translations(1,1)
+        translations_blue(1,1)
     elif RoverBlue.X2Y1:
-        translations(2,1)
+        translations_blue(2,1)
     elif RoverBlue.X3Y1:
-        translations(3,1)
+        translations_blue(3,1)
     elif RoverBlue.X4Y1:
-        translations(4,1)
+        translations_blue(4,1)
     elif RoverBlue.X0Y2:
-        translations(0,2)
+        translations_blue(0,2)
     elif RoverBlue.X1Y2:
-        translations(1,2)
+        translations_blue(1,2)
     elif RoverBlue.X2Y2:
-        translations(2,2)
+        translations_blue(2,2)
     elif RoverBlue.X3Y2:
-        translations(3,2)
+        translations_blue(3,2)
     elif RoverBlue.X4Y2:
-        translations(4,2)
+        translations_blue(4,2)
     else
-        translations(0,0)
+        translations_blue(0,0)
     end;
 
 
+func string translations_blue(int x ; int y) :
+    int new_x = 50 * x - 50 * 3;
+    int new_B = 50 * y - 50 * 1;
+    return "translate(" + <string>new_x + "," + <string>new_B + ")";
+end

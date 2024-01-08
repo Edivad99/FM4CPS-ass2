@@ -1,3 +1,8 @@
 uncontrollable event consume1, consume2, charge1, charge2;
 
+
+controllable event UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y;
+controllable event UP_B, DOWN_B, RIGHT_B, LEFT_B;
+
+
 //uncontrollable event yellow_enters;

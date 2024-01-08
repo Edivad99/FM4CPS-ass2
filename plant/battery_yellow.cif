@@ -3,26 +3,26 @@ import "events.cif";
 plant automaton BatteryYellow:
 
     location CHARGE: initial; marked;
-        edge consume1 goto FIVE;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto FIVE;
 
     location FIVE:
-        edge consume1 goto FOUR;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto FOUR;
         edge charge1 goto CHARGE;
 
     location FOUR:
-        edge consume1 goto THREE;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto THREE;
         edge charge1 goto CHARGE;
 
     location THREE:
-        edge consume1 goto TWO;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto TWO;
         edge charge1 goto CHARGE;
 
     location TWO:
-        edge consume1 goto ONE;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto ONE;
         edge charge1 goto CHARGE;
 
     location ONE:
-        edge consume1 goto EMPTY;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto EMPTY;
         edge charge1 goto CHARGE;
 
     location EMPTY:

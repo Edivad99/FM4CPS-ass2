@@ -8,6 +8,7 @@ cifmerge(
   "../plant/battery_yellow.cif",
   "../plant/battery_blue.cif",
   "../plant/rover_yellow.cif",
+  "../plant/rover_blue.cif",
    "-o ../generated/uncontrolled-plant.cif"
 );
 

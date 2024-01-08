@@ -1,9 +1,9 @@
 import "events.cif";
 
 plant automaton RoverBlue:
-    //uncontrollable event un_UP, un_DOWN, un_RIGTH, un_LEFT;
-    //uncontrollable  event  RANDOM;
+
     location X0Y0: marked;
+        edge BLUE_CHARGING;
         edge RIGHT_B goto X1Y0;
         edge DOWN_B goto X0Y1;
 
@@ -125,7 +125,7 @@ svgout id "rover_blue" attr "transform" value
         translations_blue(0,0)
     end;
 
-func string translations_blue(int x ; int y) :
+func string translations_blue(int x; int y):
     int new_x = 50 * x - 50 * 3;
     int new_y = 50 * y - 50 * 1;
     return fmt("translate(%d, %d)", new_x, new_y);

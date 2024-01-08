@@ -2,8 +2,6 @@ import "events.cif";
 
 plant automaton RoverYellow:
 
-    //uncontrollable event un_UP, un_DOWN, un_RIGTH, un_LEFT;
-    //uncontrollable  event  RANDOM;
     location X0Y0: initial; marked;
         edge YELLOW_CHARGING;
         edge RIGHT_Y goto X1Y0;
@@ -36,10 +34,6 @@ plant automaton RoverYellow:
 
     // -----------------------------
     location X1Y1: marked;
-        /*edge un_UP goto X0Y1;
-        edge un_DOWN goto X2Y1;
-        edge un_RIGTH goto X1Y0;
-        edge un_LEFT goto X1Y2;*/
         edge RANDOM_YELLOW goto X0Y1;
         edge RANDOM_YELLOW goto X2Y1;
         edge RANDOM_YELLOW goto X1Y0;
@@ -53,6 +47,7 @@ plant automaton RoverYellow:
         edge LEFT_Y goto X1Y1;
 
     location X3Y1: marked;
+        edge YELLOW_CHARGING;
         edge UP_Y goto X3Y0;
         edge DOWN_Y goto X3Y2;
         edge RIGHT_Y goto X4Y1;
@@ -62,6 +57,7 @@ plant automaton RoverYellow:
         edge UP_Y goto X4Y0;
         edge DOWN_Y goto X4Y2;
         edge LEFT_Y goto X3Y1;
+
 
     location X0Y2: marked;
         edge UP_Y goto X0Y1;
@@ -129,7 +125,7 @@ svgout id "rover_yellow" attr "transform" value
         translations_yellow(0,0)
     end;
 
-func string translations_yellow(int x ; int y) :
+func string translations_yellow(int x; int y):
     int new_x = 50 * x;
     int new_y = 50 * y;
     return fmt("translate(%d, %d)", new_x, new_y);

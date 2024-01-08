@@ -33,9 +33,10 @@ plant automaton RoverYellow:
 
     // -----------------------------
     location X1Y1: marked;
-        edge UP_Y;
-        //edge consume1 goto FOUR;
-        //edge charge1 goto CHARGE;
+        edge un_UP goto X0Y1;
+        edge un_DOWN goto X2Y1;
+        edge un_RIGTH goto X1Y0;
+        edge un_LEFT goto X1Y2;
     // -----------------------------
 
     location X2Y1: marked;
@@ -54,7 +55,6 @@ plant automaton RoverYellow:
         edge UP_Y goto X4Y0;
         edge DOWN_Y goto X4Y2;
         edge LEFT_Y goto X3Y1;
-
 
     location X0Y2: marked;
         edge UP_Y goto X0Y1;

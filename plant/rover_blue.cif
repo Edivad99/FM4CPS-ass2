@@ -33,9 +33,10 @@ plant automaton RoverBlue:
 
     // -----------------------------
     location X1Y1: marked;
-        edge UP_B;
-        //edge consume1 goto FOUR;
-        //edge charge1 goto CHARGE;
+        edge un_UP goto X0Y1;
+        edge un_DOWN goto X2Y1;
+        edge un_RIGTH goto X1Y0;
+        edge un_LEFT goto X1Y2;
     // -----------------------------
 
     location X2Y1: marked;

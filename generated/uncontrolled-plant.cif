@@ -2,7 +2,7 @@ uncontrollable consume1;
 uncontrollable consume2;
 uncontrollable charge1;
 uncontrollable charge2;
-plant automaton Battery1:
+plant automaton BatteryYellow:
   location CHARGE:
     initial;
     marked;
@@ -25,7 +25,7 @@ plant automaton Battery1:
   location EMPTY:
     edge charge1 goto CHARGE;
 end
-plant automaton Battery2:
+plant automaton BatteryBlue:
   location CHARGE:
     initial;
     marked;
@@ -48,15 +48,15 @@ plant automaton Battery2:
   location EMPTY:
     edge charge2 goto CHARGE;
 end
-svgout id "rover_yellow_battery_level_1" attr "visibility" value if Battery1.ONE or Battery1.TWO or Battery1.THREE or Battery1.FOUR or Battery1.FIVE or Battery1.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_yellow_battery_level_2" attr "visibility" value if Battery1.TWO or Battery1.THREE or Battery1.FOUR or Battery1.FIVE or Battery1.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_yellow_battery_level_3" attr "visibility" value if Battery1.THREE or Battery1.FOUR or Battery1.FIVE or Battery1.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_yellow_battery_level_4" attr "visibility" value if Battery1.FOUR or Battery1.FIVE or Battery1.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_yellow_battery_level_5" attr "visibility" value if Battery1.FIVE or Battery1.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_yellow_battery_level_6" attr "visibility" value if Battery1.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_blue_battery_level_1" attr "visibility" value if Battery2.ONE or Battery2.TWO or Battery2.THREE or Battery2.FOUR or Battery2.FIVE or Battery2.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_blue_battery_level_2" attr "visibility" value if Battery2.TWO or Battery2.THREE or Battery2.FOUR or Battery2.FIVE or Battery2.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_blue_battery_level_3" attr "visibility" value if Battery2.THREE or Battery2.FOUR or Battery2.FIVE or Battery2.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_blue_battery_level_4" attr "visibility" value if Battery2.FOUR or Battery2.FIVE or Battery2.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_blue_battery_level_5" attr "visibility" value if Battery2.FIVE or Battery2.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
-svgout id "rover_blue_battery_level_6" attr "visibility" value if Battery2.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_yellow_battery_level_1" attr "visibility" value if BatteryYellow.ONE or BatteryYellow.TWO or BatteryYellow.THREE or BatteryYellow.FOUR or BatteryYellow.FIVE or BatteryYellow.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_yellow_battery_level_2" attr "visibility" value if BatteryYellow.TWO or BatteryYellow.THREE or BatteryYellow.FOUR or BatteryYellow.FIVE or BatteryYellow.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_yellow_battery_level_3" attr "visibility" value if BatteryYellow.THREE or BatteryYellow.FOUR or BatteryYellow.FIVE or BatteryYellow.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_yellow_battery_level_4" attr "visibility" value if BatteryYellow.FOUR or BatteryYellow.FIVE or BatteryYellow.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_yellow_battery_level_5" attr "visibility" value if BatteryYellow.FIVE or BatteryYellow.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_yellow_battery_level_6" attr "visibility" value if BatteryYellow.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_blue_battery_level_1" attr "visibility" value if BatteryBlue.ONE or BatteryBlue.TWO or BatteryBlue.THREE or BatteryBlue.FOUR or BatteryBlue.FIVE or BatteryBlue.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_blue_battery_level_2" attr "visibility" value if BatteryBlue.TWO or BatteryBlue.THREE or BatteryBlue.FOUR or BatteryBlue.FIVE or BatteryBlue.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_blue_battery_level_3" attr "visibility" value if BatteryBlue.THREE or BatteryBlue.FOUR or BatteryBlue.FIVE or BatteryBlue.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_blue_battery_level_4" attr "visibility" value if BatteryBlue.FOUR or BatteryBlue.FIVE or BatteryBlue.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_blue_battery_level_5" attr "visibility" value if BatteryBlue.FIVE or BatteryBlue.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";
+svgout id "rover_blue_battery_level_6" attr "visibility" value if BatteryBlue.CHARGE: "visible" else "hidden" end file "../plant/gui.svg";

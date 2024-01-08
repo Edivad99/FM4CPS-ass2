@@ -5,8 +5,9 @@ if not exists("../generated"):
 end
 
 cifmerge(
-  "../plant/battery1.cif",
-  "../plant/battery2.cif",
+  "../plant/battery_yellow.cif",
+  "../plant/battery_blue.cif",
+  "../plant/rover_yellow.cif",
    "-o ../generated/uncontrolled-plant.cif"
 );
 

@@ -4,5 +4,5 @@ controllable event YELLOW_CHARGING, BLUE_CHARGING;
 controllable event UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y;
 controllable event UP_B, DOWN_B, RIGHT_B, LEFT_B;
 
-
-uncontrollable event RANDOM_YELLOW, RANDOM_BLUE;
+uncontrollable event UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y;
+uncontrollable event UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B;

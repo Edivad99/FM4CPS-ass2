@@ -34,10 +34,10 @@ plant automaton RoverBlue:
 
     // -----------------------------
     location X1Y1: marked;
-        edge RANDOM_BLUE goto X0Y1;
-        edge RANDOM_BLUE goto X2Y1;
-        edge RANDOM_BLUE goto X1Y0;
-        edge RANDOM_BLUE goto X1Y2;
+        edge UNC_RIGHT_B goto X0Y1;
+        edge UNC_LEFT_B goto X2Y1;
+        edge UNC_UP_B goto X1Y0;
+        edge UNC_DOWN_B goto X1Y2;
     // -----------------------------
 
     location X2Y1: marked;

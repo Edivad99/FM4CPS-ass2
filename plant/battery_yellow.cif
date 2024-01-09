@@ -5,27 +5,27 @@ plant automaton BatteryYellow:
     location CHARGE: initial; marked;
         edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto FIVE;
 
-    location FIVE:
+    location FIVE: marked;
         edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto FOUR;
         edge YELLOW_CHARGING goto CHARGE;
 
-    location FOUR:
+    location FOUR: marked;
         edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto THREE;
         edge YELLOW_CHARGING goto CHARGE;
 
-    location THREE:
+    location THREE: marked;
         edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto TWO;
         edge YELLOW_CHARGING goto CHARGE;
 
-    location TWO:
+    location TWO: marked;
         edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto ONE;
         edge YELLOW_CHARGING goto CHARGE;
 
-    location ONE:
+    location ONE: marked;
         edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y goto EMPTY;
         edge YELLOW_CHARGING goto CHARGE;
 
-    location EMPTY:
+    location EMPTY: marked;
         edge YELLOW_CHARGING goto CHARGE;
 
 end

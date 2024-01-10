@@ -1,2 +1,2 @@
-import "requirement_yellow.cif";
-import "requirement_blue.cif";
+import "requirement1_yellow.cif";
+import "requirement1_blue.cif";

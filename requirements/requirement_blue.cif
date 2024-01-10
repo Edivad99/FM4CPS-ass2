@@ -1,0 +1,31 @@
+import "../plant/events.cif";
+
+requirement Requirement1Blue:
+
+    location CHARGE: initial; marked;
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto FIVE;
+
+    location FIVE: marked;
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto FOUR;
+        edge BLUE_CHARGING goto CHARGE;
+
+    location FOUR: marked;
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto THREE;
+        edge BLUE_CHARGING goto CHARGE;
+
+    location THREE: marked;
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto TWO;
+        edge BLUE_CHARGING goto CHARGE;
+
+    location TWO: marked;
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto ONE;
+        edge BLUE_CHARGING goto CHARGE;
+
+    location ONE: marked;
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto EMPTY;
+        edge BLUE_CHARGING goto CHARGE;
+
+    location EMPTY:
+        edge BLUE_CHARGING goto CHARGE;
+
+end

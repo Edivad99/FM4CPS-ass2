@@ -1,0 +1,31 @@
+import "../plant/events.cif";
+
+requirement Requirement1Yellow:
+
+    location CHARGE: initial; marked;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto FIVE;
+
+    location FIVE: marked;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto FOUR;
+        edge YELLOW_CHARGING goto CHARGE;
+
+    location FOUR: marked;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto THREE;
+        edge YELLOW_CHARGING goto CHARGE;
+
+    location THREE: marked;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto TWO;
+        edge YELLOW_CHARGING goto CHARGE;
+
+    location TWO: marked;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto ONE;
+        edge YELLOW_CHARGING goto CHARGE;
+
+    location ONE: marked;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto EMPTY;
+        edge YELLOW_CHARGING goto CHARGE;
+
+    location EMPTY:
+        edge YELLOW_CHARGING goto CHARGE;
+
+end

@@ -25,7 +25,7 @@ plant automaton BatteryBlue:
         edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto EMPTY;
         edge BLUE_CHARGING goto CHARGE;
 
-    location EMPTY: marked;
+    location EMPTY:
         edge BLUE_CHARGING goto CHARGE;
 
 end

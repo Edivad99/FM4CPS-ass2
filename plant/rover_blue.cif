@@ -126,7 +126,7 @@ svgout id "rover_blue" attr "transform" value
     end;
 
 func string translations_blue(int x; int y):
-    int new_x = 50 * x - 50 * 3;
-    int new_y = 50 * y - 50 * 1;
+    int new_x = 100 * x - 100 * 3;
+    int new_y = 100 * y - 100 * 1;
     return fmt("translate(%d, %d)", new_x, new_y);
 end

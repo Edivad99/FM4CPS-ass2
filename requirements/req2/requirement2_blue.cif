@@ -1,0 +1,251 @@
+import "../../plant/events.cif";
+
+requirement requirement2Blue:
+//
+// ->INIT------> X0Y0_CHARGED
+//      |        ^         |
+//      |        |         |
+//      |        |         v
+//      |------> X3Y0_CHARGED
+//
+//----------------------------------------------------------------------------------------------------------------------
+// INIT
+//----------------------------------------------------------------------------------------------------------------------
+
+    // The Blue rover starts from X3Y1 but, it has to alternate the use of the charging stations REGARDLESS of which is used first.
+    location X0Y0_INIT:
+        edge BLUE_CHARGING goto X0Y0_CHARGED;
+        edge RIGHT_B       goto X1Y0_INIT;
+        edge DOWN_B        goto X0Y1_INIT;
+
+    location X1Y0_INIT:
+        edge RIGHT_B goto X2Y0_INIT;
+        edge LEFT_B  goto X0Y0_INIT;
+        edge DOWN_B  goto X1Y1_INIT;
+
+    location X2Y0_INIT:
+        edge RIGHT_B goto X3Y0_INIT;
+        edge LEFT_B  goto X1Y0_INIT;
+        edge DOWN_B  goto X2Y1_INIT;
+
+    location X3Y0_INIT:
+        edge RIGHT_B goto X4Y0_INIT;
+        edge LEFT_B  goto X2Y0_INIT;
+        edge DOWN_B  goto X3Y1_INIT;
+
+    location X4Y0_INIT:
+        edge LEFT_B goto X3Y0_INIT;
+        edge DOWN_B goto X4Y1_INIT;
+
+    location X0Y1_INIT:
+        edge UP_B    goto X0Y0_INIT;
+        edge DOWN_B  goto X0Y2_INIT;
+        edge RIGHT_B goto X1Y1_INIT;
+
+    // RED CELL: Undeterminism
+    location X1Y1_INIT:
+        edge UNC_RIGHT_B goto X0Y1_INIT;
+        edge UNC_LEFT_B  goto X2Y1_INIT;
+        edge UNC_UP_B    goto X1Y0_INIT;
+        edge UNC_DOWN_B  goto X1Y2_INIT;
+
+    location X2Y1_INIT:
+        edge UP_B    goto X2Y0_INIT;
+        edge DOWN_B  goto X2Y2_INIT;
+        edge RIGHT_B goto X3Y1_INIT;
+        edge LEFT_B  goto X1Y1_INIT;
+
+    location X3Y1_INIT: initial;
+        edge BLUE_CHARGING goto X3Y1_CHARGED;
+        edge UP_B          goto X3Y0_INIT;
+        edge DOWN_B        goto X3Y2_INIT;
+        edge RIGHT_B       goto X4Y1_INIT;
+        edge LEFT_B        goto X2Y1_INIT;
+
+    location X4Y1_INIT:
+        edge UP_B    goto X4Y0_INIT;
+        edge DOWN_B  goto X4Y2_INIT;
+        edge LEFT_B  goto X3Y1_INIT;
+
+    location X0Y2_INIT:
+        edge UP_B    goto X0Y1_INIT;
+        edge RIGHT_B goto X1Y2_INIT;
+
+    location X1Y2_INIT:
+        edge UP_B    goto X1Y1_INIT;
+        edge RIGHT_B goto X2Y2_INIT;
+        edge LEFT_B  goto X0Y2_INIT;
+
+    location X2Y2_INIT:
+        edge UP_B    goto X2Y1_INIT;
+        edge RIGHT_B goto X3Y2_INIT;
+        edge LEFT_B  goto X1Y2_INIT;
+
+    location X3Y2_INIT:
+        edge UP_B    goto X3Y1_INIT;
+        edge RIGHT_B goto X4Y2_INIT;
+        edge LEFT_B  goto X2Y2_INIT;
+
+    location X4Y2_INIT:
+        edge UP_B   goto X4Y1_INIT;
+        edge LEFT_B goto X3Y2_INIT;
+
+//----------------------------------------------------------------------------------------------------------------------
+// X0Y0_CHARGED: the rover charged in X0Y0 and now the following charge can happen only in X3Y1
+//----------------------------------------------------------------------------------------------------------------------
+    location X0Y0_CHARGED: marked;
+        //cannot charge here, because the rover must charge on X3Y1
+        edge RIGHT_B goto X1Y0_X0Y0_CHARGED;
+        edge DOWN_B  goto X0Y1_X0Y0_CHARGED;
+
+    location X1Y0_X0Y0_CHARGED:
+        edge RIGHT_B goto X2Y0_X0Y0_CHARGED;
+        edge LEFT_B  goto X0Y0_CHARGED;     // will not be able to charge on X0Y0
+        edge DOWN_B  goto X1Y1_X0Y0_CHARGED;
+
+    location X2Y0_X0Y0_CHARGED:
+        edge RIGHT_B goto X3Y0_X0Y0_CHARGED;
+        edge LEFT_B  goto X1Y0_X0Y0_CHARGED;
+        edge DOWN_B  goto X2Y1_X0Y0_CHARGED;
+
+    location X3Y0_X0Y0_CHARGED:
+        edge RIGHT_B goto X4Y0_X0Y0_CHARGED;
+        edge LEFT_B  goto X2Y0_X0Y0_CHARGED;
+        edge DOWN_B  goto X3Y1_X0Y0_CHARGED;
+
+    location X4Y0_X0Y0_CHARGED:
+        edge LEFT_B goto X3Y0_X0Y0_CHARGED;
+        edge DOWN_B goto X4Y1_X0Y0_CHARGED;
+
+    location X0Y1_X0Y0_CHARGED:
+        edge UP_B    goto X0Y0_CHARGED; // will not be able to charge on X0Y0
+        edge DOWN_B  goto X0Y2_X0Y0_CHARGED;
+        edge RIGHT_B goto X1Y1_X0Y0_CHARGED;
+
+    location X1Y1_X0Y0_CHARGED:    // RED CELL: Undeterminism
+        edge UNC_RIGHT_B goto X2Y1_X0Y0_CHARGED;
+        edge UNC_LEFT_B  goto X1Y1_X0Y0_CHARGED;
+        edge UNC_UP_B    goto X1Y0_X0Y0_CHARGED;
+        edge UNC_DOWN_B  goto X1Y2_X0Y0_CHARGED;
+
+    location X2Y1_X0Y0_CHARGED:
+        edge UP_B    goto X2Y0_X0Y0_CHARGED;
+        edge DOWN_B  goto X2Y2_X0Y0_CHARGED;
+        edge RIGHT_B goto X3Y1_X0Y0_CHARGED;
+        edge LEFT_B  goto X1Y1_X0Y0_CHARGED;
+
+    location X3Y1_X0Y0_CHARGED:
+        edge BLUE_CHARGING goto X3Y1_CHARGED;
+        edge UP_B          goto X3Y0_X0Y0_CHARGED;
+        edge DOWN_B        goto X3Y2_X0Y0_CHARGED;
+        edge RIGHT_B       goto X4Y1_X0Y0_CHARGED;
+        edge LEFT_B        goto X2Y1_X0Y0_CHARGED;
+
+    location X4Y1_X0Y0_CHARGED:
+        edge UP_B    goto X4Y0_X0Y0_CHARGED;
+        edge DOWN_B  goto X4Y2_X0Y0_CHARGED;
+        edge LEFT_B  goto X3Y1_X0Y0_CHARGED;      //<------//go to charge on X3Y1
+
+    location X0Y2_X0Y0_CHARGED:
+        edge UP_B    goto X0Y1_X0Y0_CHARGED;
+        edge RIGHT_B goto X1Y2_X0Y0_CHARGED;
+
+    location X1Y2_X0Y0_CHARGED:
+        edge UP_B    goto X1Y1_X0Y0_CHARGED;
+        edge RIGHT_B goto X2Y2_X0Y0_CHARGED;
+        edge LEFT_B  goto X0Y2_X0Y0_CHARGED;
+
+    location X2Y2_X0Y0_CHARGED:
+        edge UP_B    goto X2Y1_X0Y0_CHARGED;
+        edge RIGHT_B goto X3Y2_X0Y0_CHARGED;
+        edge LEFT_B  goto X1Y2_X0Y0_CHARGED;
+
+    location X3Y2_X0Y0_CHARGED:
+        edge UP_B    goto X3Y1_X0Y0_CHARGED;     //<------//go to charge on X3Y1
+        edge RIGHT_B goto X4Y2_X0Y0_CHARGED;
+        edge LEFT_B  goto X2Y2_X0Y0_CHARGED;
+
+    location X4Y2_X0Y0_CHARGED:
+        edge UP_B   goto X4Y1_X0Y0_CHARGED;
+        edge LEFT_B goto X3Y2_X0Y0_CHARGED;
+
+//----------------------------------------------------------------------------------------------------------------------
+// X3Y1_CHARGED: the rover charged in X3Y1 and now the following charge can happen only in X0Y0
+//----------------------------------------------------------------------------------------------------------------------
+    location X0Y0_X3Y1_CHARGED:
+        edge BLUE_CHARGING goto X0Y0_CHARGED;
+        edge RIGHT_B goto X1Y0_X0Y0_CHARGED;
+        edge DOWN_B  goto X0Y1_X0Y0_CHARGED;
+
+    location X1Y0_X3Y1_CHARGED:
+        edge RIGHT_B goto X2Y0_X3Y1_CHARGED;
+        edge LEFT_B  goto X0Y0_X3Y1_CHARGED;        //<------//go to charge on X0Y0
+        edge DOWN_B  goto X1Y1_X3Y1_CHARGED;
+
+    location X2Y0_X3Y1_CHARGED:
+        edge RIGHT_B goto X3Y0_X3Y1_CHARGED;
+        edge LEFT_B  goto X1Y0_X3Y1_CHARGED;
+        edge DOWN_B  goto X2Y1_X3Y1_CHARGED;
+
+    location X3Y0_X3Y1_CHARGED:
+        edge RIGHT_B goto X4Y0_X3Y1_CHARGED;
+        edge LEFT_B  goto X2Y0_X3Y1_CHARGED;
+        edge DOWN_B  goto X3Y1_CHARGED;      // will not be able to charge on X3Y1
+
+    location X4Y0_X3Y1_CHARGED:
+        edge LEFT_B goto X3Y0_X3Y1_CHARGED;
+        edge DOWN_B goto X4Y1_X3Y1_CHARGED;
+
+    location X0Y1_X3Y1_CHARGED:
+        edge UP_B    goto X0Y0_X3Y1_CHARGED;          //<------//go to charge on X0Y0
+        edge DOWN_B  goto X0Y2_X3Y1_CHARGED;
+        edge RIGHT_B goto X1Y1_X3Y1_CHARGED;
+
+    // RED CELL: Undeterminism
+    location X1Y1_X3Y1_CHARGED:
+        edge UNC_RIGHT_B goto X2Y1_X3Y1_CHARGED;
+        edge UNC_LEFT_B  goto X0Y1_X3Y1_CHARGED;
+        edge UNC_UP_B    goto X1Y0_X3Y1_CHARGED;
+        edge UNC_DOWN_B  goto X1Y2_X3Y1_CHARGED;
+
+    location X2Y1_X3Y1_CHARGED:
+        edge UP_B    goto X2Y0_X3Y1_CHARGED;
+        edge DOWN_B  goto X2Y2_X3Y1_CHARGED;
+        edge RIGHT_B goto X3Y1_CHARGED;       // will not be able to charge on X3Y1
+        edge LEFT_B  goto X1Y1_X3Y1_CHARGED;
+
+    location X3Y1_CHARGED: marked;
+        //cannot charge here, because the rover must charge on X0Y0
+        edge UP_B    goto X3Y0_X3Y1_CHARGED;
+        edge DOWN_B  goto X3Y2_X3Y1_CHARGED;
+        edge RIGHT_B goto X4Y1_X3Y1_CHARGED;
+        edge LEFT_B  goto X2Y1_X3Y1_CHARGED;
+
+    location X4Y1_X3Y1_CHARGED:
+        edge UP_B      goto X4Y0_X3Y1_CHARGED;
+        edge DOWN_B    goto X4Y2_X3Y1_CHARGED;
+        edge LEFT_B    goto X3Y1_CHARGED;      // will not be able to charge on X3Y1
+
+    location X0Y2_X3Y1_CHARGED:
+        edge UP_B    goto X0Y1_X3Y1_CHARGED;
+        edge RIGHT_B goto X1Y2_X3Y1_CHARGED;
+
+    location X1Y2_X3Y1_CHARGED:
+        edge UP_B    goto X1Y1_X3Y1_CHARGED;
+        edge RIGHT_B goto X2Y2_X3Y1_CHARGED;
+        edge LEFT_B  goto X0Y2_X3Y1_CHARGED;
+
+    location X2Y2_X3Y1_CHARGED:
+        edge UP_B    goto X2Y1_X3Y1_CHARGED;
+        edge RIGHT_B goto X3Y2_X3Y1_CHARGED;
+        edge LEFT_B  goto X1Y2_X3Y1_CHARGED;
+
+    location X3Y2_X3Y1_CHARGED:
+        edge UP_B    goto X3Y1_CHARGED;        // will not be able to charge on X3Y1
+        edge RIGHT_B goto X4Y2_X3Y1_CHARGED;
+        edge LEFT_B  goto X2Y2_X3Y1_CHARGED;
+
+    location X4Y2_X3Y1_CHARGED:
+        edge UP_B   goto X4Y1_X3Y1_CHARGED;
+        edge LEFT_B goto X3Y2_X3Y1_CHARGED;
+end

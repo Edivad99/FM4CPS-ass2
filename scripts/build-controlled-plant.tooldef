@@ -4,8 +4,8 @@ tooldef("build-uncontrolled-plant.tooldef");
 
 cifmerge(
     "../generated/uncontrolled-plant.cif",
-    "../requirements/requirement1.cif",
-//    "../requirements/requirement2.cif",
+//    "../requirements/requirement1.cif",
+    "../requirements/requirement2.cif",
 //    "../requirements/requirement3.cif",
     "-o tmp.cif"
 );
@@ -24,5 +24,7 @@ cifmerge(
     "supervisor.cif",
     "-o ../generated/controlled-plant.cif"
 );
+
+cifsim("../generated/controlled-plant.cif");
 
 //rmfile("supervisor.cif")

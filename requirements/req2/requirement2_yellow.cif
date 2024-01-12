@@ -13,7 +13,7 @@ requirement requirement2Yellow:
 //----------------------------------------------------------------------------------------------------------------------
 
     // The Yellow rover starts from X0Y0 but, it has to alternate the use of the charging stations REGARDLESS of which is used first.
-    location X0Y0_INIT:
+    location X0Y0_INIT: initial;
         edge YELLOW_CHARGING goto X0Y0_CHARGED;
         edge RIGHT_Y         goto X1Y0_INIT;
         edge DOWN_Y          goto X0Y1_INIT;
@@ -44,8 +44,8 @@ requirement requirement2Yellow:
 
     // RED CELL: Undeterminism
     location X1Y1_INIT:
-        edge UNC_RIGHT_Y goto X0Y1_INIT;
-        edge UNC_LEFT_Y  goto X2Y1_INIT;
+        edge UNC_RIGHT_Y goto X2Y1_INIT;
+        edge UNC_LEFT_Y  goto X0Y1_INIT;
         edge UNC_UP_Y    goto X1Y0_INIT;
         edge UNC_DOWN_Y  goto X1Y2_INIT;
 
@@ -55,7 +55,7 @@ requirement requirement2Yellow:
         edge RIGHT_Y goto X3Y1_INIT;
         edge LEFT_Y  goto X1Y1_INIT;
 
-    location X3Y1_INIT: initial;
+    location X3Y1_INIT:
         edge YELLOW_CHARGING goto X3Y1_CHARGED;
         edge UP_Y          goto X3Y0_INIT;
         edge DOWN_Y        goto X3Y2_INIT;

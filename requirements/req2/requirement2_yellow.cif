@@ -125,7 +125,7 @@ requirement requirement2Yellow:
     // RED CELL: Undeterminism
     location X1Y1_X0Y0_CHARGED: marked;
         edge UNC_RIGHT_Y goto X2Y1_X0Y0_CHARGED;
-        edge UNC_LEFT_Y  goto X1Y1_X0Y0_CHARGED;
+        edge UNC_LEFT_Y  goto X0Y1_X0Y0_CHARGED;
         edge UNC_UP_Y    goto X1Y0_X0Y0_CHARGED;
         edge UNC_DOWN_Y  goto X1Y2_X0Y0_CHARGED;
 

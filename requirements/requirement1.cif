@@ -1,2 +1,61 @@
-import "requirement1_yellow.cif";
-import "requirement1_blue.cif";
+import "../plant/events.cif";
+
+requirement Requirement1Yellow:
+
+    location CHARGE: initial; marked;
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto FIVE;
+
+    location FIVE:
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto FOUR;
+        edge YELLOW_CHARGING goto CHARGE;
+
+    location FOUR:
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto THREE;
+        edge YELLOW_CHARGING goto CHARGE;
+
+    location THREE:
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto TWO;
+        edge YELLOW_CHARGING goto CHARGE;
+
+    location TWO:
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto ONE;
+        edge YELLOW_CHARGING goto CHARGE;
+
+    location ONE:
+        edge UP_Y, DOWN_Y, RIGHT_Y, LEFT_Y, UNC_UP_Y, UNC_DOWN_Y, UNC_RIGHT_Y, UNC_LEFT_Y goto EMPTY;
+        edge YELLOW_CHARGING goto CHARGE;
+
+    location EMPTY:
+        edge YELLOW_CHARGING goto CHARGE;
+
+end
+
+requirement Requirement1Blue:
+
+    location CHARGE: initial; marked;
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto FIVE;
+
+    location FIVE:
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto FOUR;
+        edge BLUE_CHARGING goto CHARGE;
+
+    location FOUR:
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto THREE;
+        edge BLUE_CHARGING goto CHARGE;
+
+    location THREE:
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto TWO;
+        edge BLUE_CHARGING goto CHARGE;
+
+    location TWO:
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto ONE;
+        edge BLUE_CHARGING goto CHARGE;
+
+    location ONE:
+        edge UP_B, DOWN_B, RIGHT_B, LEFT_B, UNC_UP_B, UNC_DOWN_B, UNC_RIGHT_B, UNC_LEFT_B goto EMPTY;
+        edge BLUE_CHARGING goto CHARGE;
+
+    location EMPTY:
+        edge BLUE_CHARGING goto CHARGE;
+
+end

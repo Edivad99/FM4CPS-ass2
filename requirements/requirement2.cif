@@ -1,2 +1,2 @@
 import "req2/requirement2_yellow.cif";
-import "./req2/requirement2_blue.cif";
+import "req2/requirement2_blue.cif";

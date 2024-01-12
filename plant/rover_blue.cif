@@ -34,8 +34,8 @@ plant automaton RoverBlue:
 
     // -----------------------------
     location X1Y1: marked;
-        edge UNC_RIGHT_B goto X0Y1;
-        edge UNC_LEFT_B goto X2Y1;
+        edge UNC_LEFT_B goto X0Y1;
+        edge UNC_RIGHT_B goto X2Y1;
         edge UNC_UP_B goto X1Y0;
         edge UNC_DOWN_B goto X1Y2;
     // -----------------------------

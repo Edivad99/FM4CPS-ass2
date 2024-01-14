@@ -1,0 +1,1569 @@
+import "../plant/events.cif";
+
+//XYellowYYellow_XBlueYBlue
+requirement Requirement3:
+    location X0Y0_X1Y0: marked;
+        edge DOWN_Y goto X0Y1_X1Y0;
+        edge DOWN_B goto X0Y0_X1Y1;
+        edge RIGHT_B goto X0Y0_X2Y0;
+
+    location X0Y0_X2Y0: marked;
+        edge DOWN_Y goto X0Y1_X2Y0;
+        edge RIGHT_Y goto X1Y0_X2Y0;
+        edge DOWN_B goto X0Y0_X2Y1;
+        edge LEFT_B goto X0Y0_X1Y0;
+        edge RIGHT_B goto X0Y0_X3Y0;
+
+    location X0Y0_X3Y0: marked;
+        edge DOWN_Y goto X0Y1_X3Y0;
+        edge RIGHT_Y goto X1Y0_X3Y0;
+        edge DOWN_B goto X0Y0_X3Y1;
+        edge LEFT_B goto X0Y0_X2Y0;
+        edge RIGHT_B goto X0Y0_X4Y0;
+
+    location X0Y0_X4Y0: marked;
+        edge DOWN_Y goto X0Y1_X4Y0;
+        edge RIGHT_Y goto X1Y0_X4Y0;
+        edge DOWN_B goto X0Y0_X4Y1;
+        edge LEFT_B goto X0Y0_X3Y0;
+
+    location X0Y0_X0Y1: marked;
+        edge RIGHT_Y goto X1Y0_X0Y1;
+        edge DOWN_B goto X0Y0_X0Y2;
+        edge RIGHT_B goto X0Y0_X1Y1;
+
+    location X0Y0_X1Y1: marked;
+        edge DOWN_Y goto X0Y1_X1Y1;
+        edge RIGHT_Y goto X1Y0_X1Y1;
+        edge UNC_UP_B goto X0Y0_X1Y0;
+        edge UNC_DOWN_B goto X0Y0_X1Y2;
+        edge UNC_LEFT_B goto X0Y0_X0Y1;
+        edge UNC_RIGHT_B goto X0Y0_X2Y1;
+
+    location X0Y0_X2Y1: marked;
+        edge DOWN_Y goto X0Y1_X2Y1;
+        edge RIGHT_Y goto X1Y0_X2Y1;
+        edge UP_B goto X0Y0_X2Y0;
+        edge DOWN_B goto X0Y0_X2Y2;
+        edge LEFT_B goto X0Y0_X1Y1;
+        edge RIGHT_B goto X0Y0_X3Y1;
+
+    location X0Y0_X3Y1: initial; marked;
+        edge DOWN_Y goto X0Y1_X3Y1;
+        edge RIGHT_Y goto X1Y0_X3Y1;
+        edge UP_B goto X0Y0_X3Y0;
+        edge DOWN_B goto X0Y0_X3Y2;
+        edge LEFT_B goto X0Y0_X2Y1;
+        edge RIGHT_B goto X0Y0_X4Y1;
+
+    location X0Y0_X4Y1: marked;
+        edge DOWN_Y goto X0Y1_X4Y1;
+        edge RIGHT_Y goto X1Y0_X4Y1;
+        edge UP_B goto X0Y0_X4Y0;
+        edge DOWN_B goto X0Y0_X4Y2;
+        edge LEFT_B goto X0Y0_X3Y1;
+
+    location X0Y0_X0Y2: marked;
+        edge DOWN_Y goto X0Y1_X0Y2;
+        edge RIGHT_Y goto X1Y0_X0Y2;
+        edge UP_B goto X0Y0_X0Y1;
+        edge RIGHT_B goto X0Y0_X1Y2;
+
+    location X0Y0_X1Y2: marked;
+        edge DOWN_Y goto X0Y1_X1Y2;
+        edge RIGHT_Y goto X1Y0_X1Y2;
+        edge UP_B goto X0Y0_X1Y1;
+        edge LEFT_B goto X0Y0_X0Y2;
+        edge RIGHT_B goto X0Y0_X2Y2;
+
+    location X0Y0_X2Y2: marked;
+        edge DOWN_Y goto X0Y1_X2Y2;
+        edge RIGHT_Y goto X1Y0_X2Y2;
+        edge UP_B goto X0Y0_X2Y1;
+        edge LEFT_B goto X0Y0_X1Y2;
+        edge RIGHT_B goto X0Y0_X3Y2;
+
+    location X0Y0_X3Y2: marked;
+        edge DOWN_Y goto X0Y1_X3Y2;
+        edge RIGHT_Y goto X1Y0_X3Y2;
+        edge UP_B goto X0Y0_X3Y1;
+        edge LEFT_B goto X0Y0_X2Y2;
+        edge RIGHT_B goto X0Y0_X4Y2;
+
+    location X0Y0_X4Y2: marked;
+        edge DOWN_Y goto X0Y1_X4Y2;
+        edge RIGHT_Y goto X1Y0_X4Y2;
+        edge UP_B goto X0Y0_X4Y1;
+        edge LEFT_B goto X0Y0_X3Y2;
+
+    location X1Y0_X0Y0: marked;
+        edge DOWN_Y goto X1Y1_X0Y0;
+        edge RIGHT_Y goto X2Y0_X0Y0;
+        edge DOWN_B goto X1Y0_X0Y1;
+
+    location X1Y0_X2Y0: marked;
+        edge DOWN_Y goto X1Y1_X2Y0;
+        edge LEFT_Y goto X0Y0_X2Y0;
+        edge DOWN_B goto X1Y0_X2Y1;
+        edge RIGHT_B goto X1Y0_X3Y0;
+
+    location X1Y0_X3Y0: marked;
+        edge DOWN_Y goto X1Y1_X3Y0;
+        edge LEFT_Y goto X0Y0_X3Y0;
+        edge RIGHT_Y goto X2Y0_X3Y0;
+        edge DOWN_B goto X1Y0_X3Y1;
+        edge LEFT_B goto X1Y0_X2Y0;
+        edge RIGHT_B goto X1Y0_X4Y0;
+
+    location X1Y0_X4Y0: marked;
+        edge DOWN_Y goto X1Y1_X4Y0;
+        edge LEFT_Y goto X0Y0_X4Y0;
+        edge RIGHT_Y goto X2Y0_X4Y0;
+        edge DOWN_B goto X1Y0_X4Y1;
+        edge LEFT_B goto X1Y0_X3Y0;
+
+    location X1Y0_X0Y1: marked;
+        edge DOWN_Y goto X1Y1_X0Y1;
+        edge LEFT_Y goto X0Y0_X0Y1;
+        edge RIGHT_Y goto X2Y0_X0Y1;
+        edge UP_B goto X1Y0_X0Y0;
+        edge DOWN_B goto X1Y0_X0Y2;
+        edge RIGHT_B goto X1Y0_X1Y1;
+
+    location X1Y0_X1Y1: marked;
+        edge LEFT_Y goto X0Y0_X1Y1;
+        edge RIGHT_Y goto X2Y0_X1Y1;
+        edge UNC_DOWN_B goto X1Y0_X1Y2;
+        edge UNC_LEFT_B goto X1Y0_X0Y1;
+        edge UNC_RIGHT_B goto X1Y0_X2Y1;
+
+    location X1Y0_X2Y1: marked;
+        edge DOWN_Y goto X1Y1_X2Y1;
+        edge LEFT_Y goto X0Y0_X2Y1;
+        edge RIGHT_Y goto X2Y0_X2Y1;
+        edge UP_B goto X1Y0_X2Y0;
+        edge DOWN_B goto X1Y0_X2Y2;
+        edge LEFT_B goto X1Y0_X1Y1;
+        edge RIGHT_B goto X1Y0_X3Y1;
+
+    location X1Y0_X3Y1: marked;
+        edge DOWN_Y goto X1Y1_X3Y1;
+        edge LEFT_Y goto X0Y0_X3Y1;
+        edge RIGHT_Y goto X2Y0_X3Y1;
+        edge UP_B goto X1Y0_X3Y0;
+        edge DOWN_B goto X1Y0_X3Y2;
+        edge LEFT_B goto X1Y0_X2Y1;
+        edge RIGHT_B goto X1Y0_X4Y1;
+
+    location X1Y0_X4Y1: marked;
+        edge DOWN_Y goto X1Y1_X4Y1;
+        edge LEFT_Y goto X0Y0_X4Y1;
+        edge RIGHT_Y goto X2Y0_X4Y1;
+        edge UP_B goto X1Y0_X4Y0;
+        edge DOWN_B goto X1Y0_X4Y2;
+        edge LEFT_B goto X1Y0_X3Y1;
+
+    location X1Y0_X0Y2: marked;
+        edge DOWN_Y goto X1Y1_X0Y2;
+        edge LEFT_Y goto X0Y0_X0Y2;
+        edge RIGHT_Y goto X2Y0_X0Y2;
+        edge UP_B goto X1Y0_X0Y1;
+        edge RIGHT_B goto X1Y0_X1Y2;
+
+    location X1Y0_X1Y2: marked;
+        edge DOWN_Y goto X1Y1_X1Y2;
+        edge LEFT_Y goto X0Y0_X1Y2;
+        edge RIGHT_Y goto X2Y0_X1Y2;
+        edge UP_B goto X1Y0_X1Y1;
+        edge LEFT_B goto X1Y0_X0Y2;
+        edge RIGHT_B goto X1Y0_X2Y2;
+
+    location X1Y0_X2Y2: marked;
+        edge DOWN_Y goto X1Y1_X2Y2;
+        edge LEFT_Y goto X0Y0_X2Y2;
+        edge RIGHT_Y goto X2Y0_X2Y2;
+        edge UP_B goto X1Y0_X2Y1;
+        edge LEFT_B goto X1Y0_X1Y2;
+        edge RIGHT_B goto X1Y0_X3Y2;
+
+    location X1Y0_X3Y2: marked;
+        edge DOWN_Y goto X1Y1_X3Y2;
+        edge LEFT_Y goto X0Y0_X3Y2;
+        edge RIGHT_Y goto X2Y0_X3Y2;
+        edge UP_B goto X1Y0_X3Y1;
+        edge LEFT_B goto X1Y0_X2Y2;
+        edge RIGHT_B goto X1Y0_X4Y2;
+
+    location X1Y0_X4Y2: marked;
+        edge DOWN_Y goto X1Y1_X4Y2;
+        edge LEFT_Y goto X0Y0_X4Y2;
+        edge RIGHT_Y goto X2Y0_X4Y2;
+        edge UP_B goto X1Y0_X4Y1;
+        edge LEFT_B goto X1Y0_X3Y2;
+
+    location X2Y0_X0Y0: marked;
+        edge DOWN_Y goto X2Y1_X0Y0;
+        edge LEFT_Y goto X1Y0_X0Y0;
+        edge RIGHT_Y goto X3Y0_X0Y0;
+        edge DOWN_B goto X2Y0_X0Y1;
+        edge RIGHT_B goto X2Y0_X1Y0;
+
+    location X2Y0_X1Y0: marked;
+        edge DOWN_Y goto X2Y1_X1Y0;
+        edge RIGHT_Y goto X3Y0_X1Y0;
+        edge DOWN_B goto X2Y0_X1Y1;
+        edge LEFT_B goto X2Y0_X0Y0;
+
+    location X2Y0_X3Y0: marked;
+        edge DOWN_Y goto X2Y1_X3Y0;
+        edge LEFT_Y goto X1Y0_X3Y0;
+        edge DOWN_B goto X2Y0_X3Y1;
+        edge RIGHT_B goto X2Y0_X4Y0;
+
+    location X2Y0_X4Y0: marked;
+        edge DOWN_Y goto X2Y1_X4Y0;
+        edge LEFT_Y goto X1Y0_X4Y0;
+        edge RIGHT_Y goto X3Y0_X4Y0;
+        edge DOWN_B goto X2Y0_X4Y1;
+        edge LEFT_B goto X2Y0_X3Y0;
+
+    location X2Y0_X0Y1: marked;
+        edge DOWN_Y goto X2Y1_X0Y1;
+        edge LEFT_Y goto X1Y0_X0Y1;
+        edge RIGHT_Y goto X3Y0_X0Y1;
+        edge UP_B goto X2Y0_X0Y0;
+        edge DOWN_B goto X2Y0_X0Y2;
+        edge RIGHT_B goto X2Y0_X1Y1;
+
+    location X2Y0_X1Y1: marked;
+        edge DOWN_Y goto X2Y1_X1Y1;
+        edge LEFT_Y goto X1Y0_X1Y1;
+        edge RIGHT_Y goto X3Y0_X1Y1;
+        edge UNC_UP_B goto X2Y0_X1Y0;
+        edge UNC_DOWN_B goto X2Y0_X1Y2;
+        edge UNC_LEFT_B goto X2Y0_X0Y1;
+        edge UNC_RIGHT_B goto X2Y0_X2Y1;
+
+    location X2Y0_X2Y1: marked;
+        edge LEFT_Y goto X1Y0_X2Y1;
+        edge RIGHT_Y goto X3Y0_X2Y1;
+        edge DOWN_B goto X2Y0_X2Y2;
+        edge LEFT_B goto X2Y0_X1Y1;
+        edge RIGHT_B goto X2Y0_X3Y1;
+
+    location X2Y0_X3Y1: marked;
+        edge DOWN_Y goto X2Y1_X3Y1;
+        edge LEFT_Y goto X1Y0_X3Y1;
+        edge RIGHT_Y goto X3Y0_X3Y1;
+        edge UP_B goto X2Y0_X3Y0;
+        edge DOWN_B goto X2Y0_X3Y2;
+        edge LEFT_B goto X2Y0_X2Y1;
+        edge RIGHT_B goto X2Y0_X4Y1;
+
+    location X2Y0_X4Y1: marked;
+        edge DOWN_Y goto X2Y1_X4Y1;
+        edge LEFT_Y goto X1Y0_X4Y1;
+        edge RIGHT_Y goto X3Y0_X4Y1;
+        edge UP_B goto X2Y0_X4Y0;
+        edge DOWN_B goto X2Y0_X4Y2;
+        edge LEFT_B goto X2Y0_X3Y1;
+
+    location X2Y0_X0Y2: marked;
+        edge DOWN_Y goto X2Y1_X0Y2;
+        edge LEFT_Y goto X1Y0_X0Y2;
+        edge RIGHT_Y goto X3Y0_X0Y2;
+        edge UP_B goto X2Y0_X0Y1;
+        edge RIGHT_B goto X2Y0_X1Y2;
+
+    location X2Y0_X1Y2: marked;
+        edge DOWN_Y goto X2Y1_X1Y2;
+        edge LEFT_Y goto X1Y0_X1Y2;
+        edge RIGHT_Y goto X3Y0_X1Y2;
+        edge UP_B goto X2Y0_X1Y1;
+        edge LEFT_B goto X2Y0_X0Y2;
+        edge RIGHT_B goto X2Y0_X2Y2;
+
+    location X2Y0_X2Y2: marked;
+        edge DOWN_Y goto X2Y1_X2Y2;
+        edge LEFT_Y goto X1Y0_X2Y2;
+        edge RIGHT_Y goto X3Y0_X2Y2;
+        edge UP_B goto X2Y0_X2Y1;
+        edge LEFT_B goto X2Y0_X1Y2;
+        edge RIGHT_B goto X2Y0_X3Y2;
+
+    location X2Y0_X3Y2: marked;
+        edge DOWN_Y goto X2Y1_X3Y2;
+        edge LEFT_Y goto X1Y0_X3Y2;
+        edge RIGHT_Y goto X3Y0_X3Y2;
+        edge UP_B goto X2Y0_X3Y1;
+        edge LEFT_B goto X2Y0_X2Y2;
+        edge RIGHT_B goto X2Y0_X4Y2;
+
+    location X2Y0_X4Y2: marked;
+        edge DOWN_Y goto X2Y1_X4Y2;
+        edge LEFT_Y goto X1Y0_X4Y2;
+        edge RIGHT_Y goto X3Y0_X4Y2;
+        edge UP_B goto X2Y0_X4Y1;
+        edge LEFT_B goto X2Y0_X3Y2;
+
+    location X3Y0_X0Y0: marked;
+        edge DOWN_Y goto X3Y1_X0Y0;
+        edge LEFT_Y goto X2Y0_X0Y0;
+        edge RIGHT_Y goto X4Y0_X0Y0;
+        edge DOWN_B goto X3Y0_X0Y1;
+        edge RIGHT_B goto X3Y0_X1Y0;
+
+    location X3Y0_X1Y0: marked;
+        edge DOWN_Y goto X3Y1_X1Y0;
+        edge LEFT_Y goto X2Y0_X1Y0;
+        edge RIGHT_Y goto X4Y0_X1Y0;
+        edge DOWN_B goto X3Y0_X1Y1;
+        edge LEFT_B goto X3Y0_X0Y0;
+        edge RIGHT_B goto X3Y0_X2Y0;
+
+    location X3Y0_X2Y0: marked;
+        edge DOWN_Y goto X3Y1_X2Y0;
+        edge RIGHT_Y goto X4Y0_X2Y0;
+        edge DOWN_B goto X3Y0_X2Y1;
+        edge LEFT_B goto X3Y0_X1Y0;
+
+    location X3Y0_X4Y0: marked;
+        edge DOWN_Y goto X3Y1_X4Y0;
+        edge LEFT_Y goto X2Y0_X4Y0;
+        edge DOWN_B goto X3Y0_X4Y1;
+
+    location X3Y0_X0Y1: marked;
+        edge DOWN_Y goto X3Y1_X0Y1;
+        edge LEFT_Y goto X2Y0_X0Y1;
+        edge RIGHT_Y goto X4Y0_X0Y1;
+        edge UP_B goto X3Y0_X0Y0;
+        edge DOWN_B goto X3Y0_X0Y2;
+        edge RIGHT_B goto X3Y0_X1Y1;
+
+    location X3Y0_X1Y1: marked;
+        edge DOWN_Y goto X3Y1_X1Y1;
+        edge LEFT_Y goto X2Y0_X1Y1;
+        edge RIGHT_Y goto X4Y0_X1Y1;
+        edge UNC_UP_B goto X3Y0_X1Y0;
+        edge UNC_DOWN_B goto X3Y0_X1Y2;
+        edge UNC_LEFT_B goto X3Y0_X0Y1;
+        edge UNC_RIGHT_B goto X3Y0_X2Y1;
+
+    location X3Y0_X2Y1: marked;
+        edge DOWN_Y goto X3Y1_X2Y1;
+        edge LEFT_Y goto X2Y0_X2Y1;
+        edge RIGHT_Y goto X4Y0_X2Y1;
+        edge UP_B goto X3Y0_X2Y0;
+        edge DOWN_B goto X3Y0_X2Y2;
+        edge LEFT_B goto X3Y0_X1Y1;
+        edge RIGHT_B goto X3Y0_X3Y1;
+
+    location X3Y0_X3Y1: marked;
+        edge LEFT_Y goto X2Y0_X3Y1;
+        edge RIGHT_Y goto X4Y0_X3Y1;
+        edge DOWN_B goto X3Y0_X3Y2;
+        edge LEFT_B goto X3Y0_X2Y1;
+        edge RIGHT_B goto X3Y0_X4Y1;
+
+    location X3Y0_X4Y1: marked;
+        edge DOWN_Y goto X3Y1_X4Y1;
+        edge LEFT_Y goto X2Y0_X4Y1;
+        edge RIGHT_Y goto X4Y0_X4Y1;
+        edge UP_B goto X3Y0_X4Y0;
+        edge DOWN_B goto X3Y0_X4Y2;
+        edge LEFT_B goto X3Y0_X3Y1;
+
+    location X3Y0_X0Y2: marked;
+        edge DOWN_Y goto X3Y1_X0Y2;
+        edge LEFT_Y goto X2Y0_X0Y2;
+        edge RIGHT_Y goto X4Y0_X0Y2;
+        edge UP_B goto X3Y0_X0Y1;
+        edge RIGHT_B goto X3Y0_X1Y2;
+
+    location X3Y0_X1Y2: marked;
+        edge DOWN_Y goto X3Y1_X1Y2;
+        edge LEFT_Y goto X2Y0_X1Y2;
+        edge RIGHT_Y goto X4Y0_X1Y2;
+        edge UP_B goto X3Y0_X1Y1;
+        edge LEFT_B goto X3Y0_X0Y2;
+        edge RIGHT_B goto X3Y0_X2Y2;
+
+    location X3Y0_X2Y2: marked;
+        edge DOWN_Y goto X3Y1_X2Y2;
+        edge LEFT_Y goto X2Y0_X2Y2;
+        edge RIGHT_Y goto X4Y0_X2Y2;
+        edge UP_B goto X3Y0_X2Y1;
+        edge LEFT_B goto X3Y0_X1Y2;
+        edge RIGHT_B goto X3Y0_X3Y2;
+
+    location X3Y0_X3Y2: marked;
+        edge DOWN_Y goto X3Y1_X3Y2;
+        edge LEFT_Y goto X2Y0_X3Y2;
+        edge RIGHT_Y goto X4Y0_X3Y2;
+        edge UP_B goto X3Y0_X3Y1;
+        edge LEFT_B goto X3Y0_X2Y2;
+        edge RIGHT_B goto X3Y0_X4Y2;
+
+    location X3Y0_X4Y2: marked;
+        edge DOWN_Y goto X3Y1_X4Y2;
+        edge LEFT_Y goto X2Y0_X4Y2;
+        edge RIGHT_Y goto X4Y0_X4Y2;
+        edge UP_B goto X3Y0_X4Y1;
+        edge LEFT_B goto X3Y0_X3Y2;
+
+    location X4Y0_X0Y0: marked;
+        edge DOWN_Y goto X4Y1_X0Y0;
+        edge LEFT_Y goto X3Y0_X0Y0;
+        edge DOWN_B goto X4Y0_X0Y1;
+        edge RIGHT_B goto X4Y0_X1Y0;
+
+    location X4Y0_X1Y0: marked;
+        edge DOWN_Y goto X4Y1_X1Y0;
+        edge LEFT_Y goto X3Y0_X1Y0;
+        edge DOWN_B goto X4Y0_X1Y1;
+        edge LEFT_B goto X4Y0_X0Y0;
+        edge RIGHT_B goto X4Y0_X2Y0;
+
+    location X4Y0_X2Y0: marked;
+        edge DOWN_Y goto X4Y1_X2Y0;
+        edge LEFT_Y goto X3Y0_X2Y0;
+        edge DOWN_B goto X4Y0_X2Y1;
+        edge LEFT_B goto X4Y0_X1Y0;
+        edge RIGHT_B goto X4Y0_X3Y0;
+
+    location X4Y0_X3Y0: marked;
+        edge DOWN_Y goto X4Y1_X3Y0;
+        edge DOWN_B goto X4Y0_X3Y1;
+        edge LEFT_B goto X4Y0_X2Y0;
+
+    location X4Y0_X0Y1: marked;
+        edge DOWN_Y goto X4Y1_X0Y1;
+        edge LEFT_Y goto X3Y0_X0Y1;
+        edge UP_B goto X4Y0_X0Y0;
+        edge DOWN_B goto X4Y0_X0Y2;
+        edge RIGHT_B goto X4Y0_X1Y1;
+
+    location X4Y0_X1Y1: marked;
+        edge DOWN_Y goto X4Y1_X1Y1;
+        edge LEFT_Y goto X3Y0_X1Y1;
+        edge UNC_UP_B goto X4Y0_X1Y0;
+        edge UNC_DOWN_B goto X4Y0_X1Y2;
+        edge UNC_LEFT_B goto X4Y0_X0Y1;
+        edge UNC_RIGHT_B goto X4Y0_X2Y1;
+
+    location X4Y0_X2Y1: marked;
+        edge DOWN_Y goto X4Y1_X2Y1;
+        edge LEFT_Y goto X3Y0_X2Y1;
+        edge UP_B goto X4Y0_X2Y0;
+        edge DOWN_B goto X4Y0_X2Y2;
+        edge LEFT_B goto X4Y0_X1Y1;
+        edge RIGHT_B goto X4Y0_X3Y1;
+
+    location X4Y0_X3Y1: marked;
+        edge DOWN_Y goto X4Y1_X3Y1;
+        edge LEFT_Y goto X3Y0_X3Y1;
+        edge UP_B goto X4Y0_X3Y0;
+        edge DOWN_B goto X4Y0_X3Y2;
+        edge LEFT_B goto X4Y0_X2Y1;
+        edge RIGHT_B goto X4Y0_X4Y1;
+
+    location X4Y0_X4Y1: marked;
+        edge LEFT_Y goto X3Y0_X4Y1;
+        edge DOWN_B goto X4Y0_X4Y2;
+        edge LEFT_B goto X4Y0_X3Y1;
+
+    location X4Y0_X0Y2: marked;
+        edge DOWN_Y goto X4Y1_X0Y2;
+        edge LEFT_Y goto X3Y0_X0Y2;
+        edge UP_B goto X4Y0_X0Y1;
+        edge RIGHT_B goto X4Y0_X1Y2;
+
+    location X4Y0_X1Y2: marked;
+        edge DOWN_Y goto X4Y1_X1Y2;
+        edge LEFT_Y goto X3Y0_X1Y2;
+        edge UP_B goto X4Y0_X1Y1;
+        edge LEFT_B goto X4Y0_X0Y2;
+        edge RIGHT_B goto X4Y0_X2Y2;
+
+    location X4Y0_X2Y2: marked;
+        edge DOWN_Y goto X4Y1_X2Y2;
+        edge LEFT_Y goto X3Y0_X2Y2;
+        edge UP_B goto X4Y0_X2Y1;
+        edge LEFT_B goto X4Y0_X1Y2;
+        edge RIGHT_B goto X4Y0_X3Y2;
+
+    location X4Y0_X3Y2: marked;
+        edge DOWN_Y goto X4Y1_X3Y2;
+        edge LEFT_Y goto X3Y0_X3Y2;
+        edge UP_B goto X4Y0_X3Y1;
+        edge LEFT_B goto X4Y0_X2Y2;
+        edge RIGHT_B goto X4Y0_X4Y2;
+
+    location X4Y0_X4Y2: marked;
+        edge DOWN_Y goto X4Y1_X4Y2;
+        edge LEFT_Y goto X3Y0_X4Y2;
+        edge UP_B goto X4Y0_X4Y1;
+        edge LEFT_B goto X4Y0_X3Y2;
+
+    location X0Y1_X0Y0: marked;
+        edge DOWN_Y goto X0Y2_X0Y0;
+        edge RIGHT_Y goto X1Y1_X0Y0;
+        edge RIGHT_B goto X0Y1_X1Y0;
+
+    location X0Y1_X1Y0: marked;
+        edge UP_Y goto X0Y0_X1Y0;
+        edge DOWN_Y goto X0Y2_X1Y0;
+        edge RIGHT_Y goto X1Y1_X1Y0;
+        edge DOWN_B goto X0Y1_X1Y1;
+        edge LEFT_B goto X0Y1_X0Y0;
+        edge RIGHT_B goto X0Y1_X2Y0;
+
+    location X0Y1_X2Y0: marked;
+        edge UP_Y goto X0Y0_X2Y0;
+        edge DOWN_Y goto X0Y2_X2Y0;
+        edge RIGHT_Y goto X1Y1_X2Y0;
+        edge DOWN_B goto X0Y1_X2Y1;
+        edge LEFT_B goto X0Y1_X1Y0;
+        edge RIGHT_B goto X0Y1_X3Y0;
+
+    location X0Y1_X3Y0: marked;
+        edge UP_Y goto X0Y0_X3Y0;
+        edge DOWN_Y goto X0Y2_X3Y0;
+        edge RIGHT_Y goto X1Y1_X3Y0;
+        edge DOWN_B goto X0Y1_X3Y1;
+        edge LEFT_B goto X0Y1_X2Y0;
+        edge RIGHT_B goto X0Y1_X4Y0;
+
+    location X0Y1_X4Y0: marked;
+        edge UP_Y goto X0Y0_X4Y0;
+        edge DOWN_Y goto X0Y2_X4Y0;
+        edge RIGHT_Y goto X1Y1_X4Y0;
+        edge DOWN_B goto X0Y1_X4Y1;
+        edge LEFT_B goto X0Y1_X3Y0;
+
+    location X0Y1_X1Y1: marked;
+        edge UP_Y goto X0Y0_X1Y1;
+        edge DOWN_Y goto X0Y2_X1Y1;
+        edge UNC_UP_B goto X0Y1_X1Y0;
+        edge UNC_DOWN_B goto X0Y1_X1Y2;
+        edge UNC_RIGHT_B goto X0Y1_X2Y1;
+
+    location X0Y1_X2Y1: marked;
+        edge UP_Y goto X0Y0_X2Y1;
+        edge DOWN_Y goto X0Y2_X2Y1;
+        edge RIGHT_Y goto X1Y1_X2Y1;
+        edge UP_B goto X0Y1_X2Y0;
+        edge DOWN_B goto X0Y1_X2Y2;
+        edge LEFT_B goto X0Y1_X1Y1;
+        edge RIGHT_B goto X0Y1_X3Y1;
+
+    location X0Y1_X3Y1: marked;
+        edge UP_Y goto X0Y0_X3Y1;
+        edge DOWN_Y goto X0Y2_X3Y1;
+        edge RIGHT_Y goto X1Y1_X3Y1;
+        edge UP_B goto X0Y1_X3Y0;
+        edge DOWN_B goto X0Y1_X3Y2;
+        edge LEFT_B goto X0Y1_X2Y1;
+        edge RIGHT_B goto X0Y1_X4Y1;
+
+    location X0Y1_X4Y1: marked;
+        edge UP_Y goto X0Y0_X4Y1;
+        edge DOWN_Y goto X0Y2_X4Y1;
+        edge RIGHT_Y goto X1Y1_X4Y1;
+        edge UP_B goto X0Y1_X4Y0;
+        edge DOWN_B goto X0Y1_X4Y2;
+        edge LEFT_B goto X0Y1_X3Y1;
+
+    location X0Y1_X0Y2: marked;
+        edge UP_Y goto X0Y0_X0Y2;
+        edge RIGHT_Y goto X1Y1_X0Y2;
+        edge RIGHT_B goto X0Y1_X1Y2;
+
+    location X0Y1_X1Y2: marked;
+        edge UP_Y goto X0Y0_X1Y2;
+        edge DOWN_Y goto X0Y2_X1Y2;
+        edge RIGHT_Y goto X1Y1_X1Y2;
+        edge UP_B goto X0Y1_X1Y1;
+        edge LEFT_B goto X0Y1_X0Y2;
+        edge RIGHT_B goto X0Y1_X2Y2;
+
+    location X0Y1_X2Y2: marked;
+        edge UP_Y goto X0Y0_X2Y2;
+        edge DOWN_Y goto X0Y2_X2Y2;
+        edge RIGHT_Y goto X1Y1_X2Y2;
+        edge UP_B goto X0Y1_X2Y1;
+        edge LEFT_B goto X0Y1_X1Y2;
+        edge RIGHT_B goto X0Y1_X3Y2;
+
+    location X0Y1_X3Y2: marked;
+        edge UP_Y goto X0Y0_X3Y2;
+        edge DOWN_Y goto X0Y2_X3Y2;
+        edge RIGHT_Y goto X1Y1_X3Y2;
+        edge UP_B goto X0Y1_X3Y1;
+        edge LEFT_B goto X0Y1_X2Y2;
+        edge RIGHT_B goto X0Y1_X4Y2;
+
+    location X0Y1_X4Y2: marked;
+        edge UP_Y goto X0Y0_X4Y2;
+        edge DOWN_Y goto X0Y2_X4Y2;
+        edge RIGHT_Y goto X1Y1_X4Y2;
+        edge UP_B goto X0Y1_X4Y1;
+        edge LEFT_B goto X0Y1_X3Y2;
+
+    location X1Y1_X0Y0: marked;
+        edge UNC_UP_Y goto X1Y0_X0Y0;
+        edge UNC_DOWN_Y goto X1Y2_X0Y0;
+        edge UNC_LEFT_Y goto X0Y1_X0Y0;
+        edge UNC_RIGHT_Y goto X2Y1_X0Y0;
+        edge DOWN_B goto X1Y1_X0Y1;
+        edge RIGHT_B goto X1Y1_X1Y0;
+
+    location X1Y1_X1Y0: marked;
+        edge UNC_DOWN_Y goto X1Y2_X1Y0;
+        edge UNC_LEFT_Y goto X0Y1_X1Y0;
+        edge UNC_RIGHT_Y goto X2Y1_X1Y0;
+        edge LEFT_B goto X1Y1_X0Y0;
+        edge RIGHT_B goto X1Y1_X2Y0;
+
+    location X1Y1_X2Y0: marked;
+        edge UNC_UP_Y goto X1Y0_X2Y0;
+        edge UNC_DOWN_Y goto X1Y2_X2Y0;
+        edge UNC_LEFT_Y goto X0Y1_X2Y0;
+        edge UNC_RIGHT_Y goto X2Y1_X2Y0;
+        edge DOWN_B goto X1Y1_X2Y1;
+        edge LEFT_B goto X1Y1_X1Y0;
+        edge RIGHT_B goto X1Y1_X3Y0;
+
+    location X1Y1_X3Y0: marked;
+        edge UNC_UP_Y goto X1Y0_X3Y0;
+        edge UNC_DOWN_Y goto X1Y2_X3Y0;
+        edge UNC_LEFT_Y goto X0Y1_X3Y0;
+        edge UNC_RIGHT_Y goto X2Y1_X3Y0;
+        edge DOWN_B goto X1Y1_X3Y1;
+        edge LEFT_B goto X1Y1_X2Y0;
+        edge RIGHT_B goto X1Y1_X4Y0;
+
+    location X1Y1_X4Y0: marked;
+        edge UNC_UP_Y goto X1Y0_X4Y0;
+        edge UNC_DOWN_Y goto X1Y2_X4Y0;
+        edge UNC_LEFT_Y goto X0Y1_X4Y0;
+        edge UNC_RIGHT_Y goto X2Y1_X4Y0;
+        edge DOWN_B goto X1Y1_X4Y1;
+        edge LEFT_B goto X1Y1_X3Y0;
+
+    location X1Y1_X0Y1: marked;
+        edge UNC_UP_Y goto X1Y0_X0Y1;
+        edge UNC_DOWN_Y goto X1Y2_X0Y1;
+        edge UNC_RIGHT_Y goto X2Y1_X0Y1;
+        edge UP_B goto X1Y1_X0Y0;
+        edge DOWN_B goto X1Y1_X0Y2;
+
+    location X1Y1_X2Y1: marked;
+        edge UNC_UP_Y goto X1Y0_X2Y1;
+        edge UNC_DOWN_Y goto X1Y2_X2Y1;
+        edge UNC_LEFT_Y goto X0Y1_X2Y1;
+        edge UP_B goto X1Y1_X2Y0;
+        edge DOWN_B goto X1Y1_X2Y2;
+        edge RIGHT_B goto X1Y1_X3Y1;
+
+    location X1Y1_X3Y1: marked;
+        edge UNC_UP_Y goto X1Y0_X3Y1;
+        edge UNC_DOWN_Y goto X1Y2_X3Y1;
+        edge UNC_LEFT_Y goto X0Y1_X3Y1;
+        edge UNC_RIGHT_Y goto X2Y1_X3Y1;
+        edge UP_B goto X1Y1_X3Y0;
+        edge DOWN_B goto X1Y1_X3Y2;
+        edge LEFT_B goto X1Y1_X2Y1;
+        edge RIGHT_B goto X1Y1_X4Y1;
+
+    location X1Y1_X4Y1: marked;
+        edge UNC_UP_Y goto X1Y0_X4Y1;
+        edge UNC_DOWN_Y goto X1Y2_X4Y1;
+        edge UNC_LEFT_Y goto X0Y1_X4Y1;
+        edge UNC_RIGHT_Y goto X2Y1_X4Y1;
+        edge UP_B goto X1Y1_X4Y0;
+        edge DOWN_B goto X1Y1_X4Y2;
+        edge LEFT_B goto X1Y1_X3Y1;
+
+    location X1Y1_X0Y2: marked;
+        edge UNC_UP_Y goto X1Y0_X0Y2;
+        edge UNC_DOWN_Y goto X1Y2_X0Y2;
+        edge UNC_LEFT_Y goto X0Y1_X0Y2;
+        edge UNC_RIGHT_Y goto X2Y1_X0Y2;
+        edge UP_B goto X1Y1_X0Y1;
+        edge RIGHT_B goto X1Y1_X1Y2;
+
+    location X1Y1_X1Y2: marked;
+        edge UNC_UP_Y goto X1Y0_X1Y2;
+        edge UNC_LEFT_Y goto X0Y1_X1Y2;
+        edge UNC_RIGHT_Y goto X2Y1_X1Y2;
+        edge LEFT_B goto X1Y1_X0Y2;
+        edge RIGHT_B goto X1Y1_X2Y2;
+
+    location X1Y1_X2Y2: marked;
+        edge UNC_UP_Y goto X1Y0_X2Y2;
+        edge UNC_DOWN_Y goto X1Y2_X2Y2;
+        edge UNC_LEFT_Y goto X0Y1_X2Y2;
+        edge UNC_RIGHT_Y goto X2Y1_X2Y2;
+        edge UP_B goto X1Y1_X2Y1;
+        edge LEFT_B goto X1Y1_X1Y2;
+        edge RIGHT_B goto X1Y1_X3Y2;
+
+    location X1Y1_X3Y2: marked;
+        edge UNC_UP_Y goto X1Y0_X3Y2;
+        edge UNC_DOWN_Y goto X1Y2_X3Y2;
+        edge UNC_LEFT_Y goto X0Y1_X3Y2;
+        edge UNC_RIGHT_Y goto X2Y1_X3Y2;
+        edge UP_B goto X1Y1_X3Y1;
+        edge LEFT_B goto X1Y1_X2Y2;
+        edge RIGHT_B goto X1Y1_X4Y2;
+
+    location X1Y1_X4Y2: marked;
+        edge UNC_UP_Y goto X1Y0_X4Y2;
+        edge UNC_DOWN_Y goto X1Y2_X4Y2;
+        edge UNC_LEFT_Y goto X0Y1_X4Y2;
+        edge UNC_RIGHT_Y goto X2Y1_X4Y2;
+        edge UP_B goto X1Y1_X4Y1;
+        edge LEFT_B goto X1Y1_X3Y2;
+
+    location X2Y1_X0Y0: marked;
+        edge UP_Y goto X2Y0_X0Y0;
+        edge DOWN_Y goto X2Y2_X0Y0;
+        edge LEFT_Y goto X1Y1_X0Y0;
+        edge RIGHT_Y goto X3Y1_X0Y0;
+        edge DOWN_B goto X2Y1_X0Y1;
+        edge RIGHT_B goto X2Y1_X1Y0;
+
+    location X2Y1_X1Y0: marked;
+        edge UP_Y goto X2Y0_X1Y0;
+        edge DOWN_Y goto X2Y2_X1Y0;
+        edge LEFT_Y goto X1Y1_X1Y0;
+        edge RIGHT_Y goto X3Y1_X1Y0;
+        edge DOWN_B goto X2Y1_X1Y1;
+        edge LEFT_B goto X2Y1_X0Y0;
+        edge RIGHT_B goto X2Y1_X2Y0;
+
+    location X2Y1_X2Y0: marked;
+        edge DOWN_Y goto X2Y2_X2Y0;
+        edge LEFT_Y goto X1Y1_X2Y0;
+        edge RIGHT_Y goto X3Y1_X2Y0;
+        edge LEFT_B goto X2Y1_X1Y0;
+        edge RIGHT_B goto X2Y1_X3Y0;
+
+    location X2Y1_X3Y0: marked;
+        edge UP_Y goto X2Y0_X3Y0;
+        edge DOWN_Y goto X2Y2_X3Y0;
+        edge LEFT_Y goto X1Y1_X3Y0;
+        edge RIGHT_Y goto X3Y1_X3Y0;
+        edge DOWN_B goto X2Y1_X3Y1;
+        edge LEFT_B goto X2Y1_X2Y0;
+        edge RIGHT_B goto X2Y1_X4Y0;
+
+    location X2Y1_X4Y0: marked;
+        edge UP_Y goto X2Y0_X4Y0;
+        edge DOWN_Y goto X2Y2_X4Y0;
+        edge LEFT_Y goto X1Y1_X4Y0;
+        edge RIGHT_Y goto X3Y1_X4Y0;
+        edge DOWN_B goto X2Y1_X4Y1;
+        edge LEFT_B goto X2Y1_X3Y0;
+
+    location X2Y1_X0Y1: marked;
+        edge UP_Y goto X2Y0_X0Y1;
+        edge DOWN_Y goto X2Y2_X0Y1;
+        edge LEFT_Y goto X1Y1_X0Y1;
+        edge RIGHT_Y goto X3Y1_X0Y1;
+        edge UP_B goto X2Y1_X0Y0;
+        edge DOWN_B goto X2Y1_X0Y2;
+        edge RIGHT_B goto X2Y1_X1Y1;
+
+    location X2Y1_X1Y1: marked;
+        edge UP_Y goto X2Y0_X1Y1;
+        edge DOWN_Y goto X2Y2_X1Y1;
+        edge RIGHT_Y goto X3Y1_X1Y1;
+        edge UNC_UP_B goto X2Y1_X1Y0;
+        edge UNC_DOWN_B goto X2Y1_X1Y2;
+        edge UNC_LEFT_B goto X2Y1_X0Y1;
+
+    location X2Y1_X3Y1: marked;
+        edge UP_Y goto X2Y0_X3Y1;
+        edge DOWN_Y goto X2Y2_X3Y1;
+        edge LEFT_Y goto X1Y1_X3Y1;
+        edge UP_B goto X2Y1_X3Y0;
+        edge DOWN_B goto X2Y1_X3Y2;
+        edge RIGHT_B goto X2Y1_X4Y1;
+
+    location X2Y1_X4Y1: marked;
+        edge UP_Y goto X2Y0_X4Y1;
+        edge DOWN_Y goto X2Y2_X4Y1;
+        edge LEFT_Y goto X1Y1_X4Y1;
+        edge RIGHT_Y goto X3Y1_X4Y1;
+        edge UP_B goto X2Y1_X4Y0;
+        edge DOWN_B goto X2Y1_X4Y2;
+        edge LEFT_B goto X2Y1_X3Y1;
+
+    location X2Y1_X0Y2: marked;
+        edge UP_Y goto X2Y0_X0Y2;
+        edge DOWN_Y goto X2Y2_X0Y2;
+        edge LEFT_Y goto X1Y1_X0Y2;
+        edge RIGHT_Y goto X3Y1_X0Y2;
+        edge UP_B goto X2Y1_X0Y1;
+        edge RIGHT_B goto X2Y1_X1Y2;
+
+    location X2Y1_X1Y2: marked;
+        edge UP_Y goto X2Y0_X1Y2;
+        edge DOWN_Y goto X2Y2_X1Y2;
+        edge LEFT_Y goto X1Y1_X1Y2;
+        edge RIGHT_Y goto X3Y1_X1Y2;
+        edge UP_B goto X2Y1_X1Y1;
+        edge LEFT_B goto X2Y1_X0Y2;
+        edge RIGHT_B goto X2Y1_X2Y2;
+
+    location X2Y1_X2Y2: marked;
+        edge UP_Y goto X2Y0_X2Y2;
+        edge LEFT_Y goto X1Y1_X2Y2;
+        edge RIGHT_Y goto X3Y1_X2Y2;
+        edge LEFT_B goto X2Y1_X1Y2;
+        edge RIGHT_B goto X2Y1_X3Y2;
+
+    location X2Y1_X3Y2: marked;
+        edge UP_Y goto X2Y0_X3Y2;
+        edge DOWN_Y goto X2Y2_X3Y2;
+        edge LEFT_Y goto X1Y1_X3Y2;
+        edge RIGHT_Y goto X3Y1_X3Y2;
+        edge UP_B goto X2Y1_X3Y1;
+        edge LEFT_B goto X2Y1_X2Y2;
+        edge RIGHT_B goto X2Y1_X4Y2;
+
+    location X2Y1_X4Y2: marked;
+        edge UP_Y goto X2Y0_X4Y2;
+        edge DOWN_Y goto X2Y2_X4Y2;
+        edge LEFT_Y goto X1Y1_X4Y2;
+        edge RIGHT_Y goto X3Y1_X4Y2;
+        edge UP_B goto X2Y1_X4Y1;
+        edge LEFT_B goto X2Y1_X3Y2;
+
+    location X3Y1_X0Y0: marked;
+        edge UP_Y goto X3Y0_X0Y0;
+        edge DOWN_Y goto X3Y2_X0Y0;
+        edge LEFT_Y goto X2Y1_X0Y0;
+        edge RIGHT_Y goto X4Y1_X0Y0;
+        edge DOWN_B goto X3Y1_X0Y1;
+        edge RIGHT_B goto X3Y1_X1Y0;
+
+    location X3Y1_X1Y0: marked;
+        edge UP_Y goto X3Y0_X1Y0;
+        edge DOWN_Y goto X3Y2_X1Y0;
+        edge LEFT_Y goto X2Y1_X1Y0;
+        edge RIGHT_Y goto X4Y1_X1Y0;
+        edge DOWN_B goto X3Y1_X1Y1;
+        edge LEFT_B goto X3Y1_X0Y0;
+        edge RIGHT_B goto X3Y1_X2Y0;
+
+    location X3Y1_X2Y0: marked;
+        edge UP_Y goto X3Y0_X2Y0;
+        edge DOWN_Y goto X3Y2_X2Y0;
+        edge LEFT_Y goto X2Y1_X2Y0;
+        edge RIGHT_Y goto X4Y1_X2Y0;
+        edge DOWN_B goto X3Y1_X2Y1;
+        edge LEFT_B goto X3Y1_X1Y0;
+        edge RIGHT_B goto X3Y1_X3Y0;
+
+    location X3Y1_X3Y0: marked;
+        edge DOWN_Y goto X3Y2_X3Y0;
+        edge LEFT_Y goto X2Y1_X3Y0;
+        edge RIGHT_Y goto X4Y1_X3Y0;
+        edge LEFT_B goto X3Y1_X2Y0;
+        edge RIGHT_B goto X3Y1_X4Y0;
+
+    location X3Y1_X4Y0: marked;
+        edge UP_Y goto X3Y0_X4Y0;
+        edge DOWN_Y goto X3Y2_X4Y0;
+        edge LEFT_Y goto X2Y1_X4Y0;
+        edge RIGHT_Y goto X4Y1_X4Y0;
+        edge DOWN_B goto X3Y1_X4Y1;
+        edge LEFT_B goto X3Y1_X3Y0;
+
+    location X3Y1_X0Y1: marked;
+        edge UP_Y goto X3Y0_X0Y1;
+        edge DOWN_Y goto X3Y2_X0Y1;
+        edge LEFT_Y goto X2Y1_X0Y1;
+        edge RIGHT_Y goto X4Y1_X0Y1;
+        edge UP_B goto X3Y1_X0Y0;
+        edge DOWN_B goto X3Y1_X0Y2;
+        edge RIGHT_B goto X3Y1_X1Y1;
+
+    location X3Y1_X1Y1: marked;
+        edge UP_Y goto X3Y0_X1Y1;
+        edge DOWN_Y goto X3Y2_X1Y1;
+        edge LEFT_Y goto X2Y1_X1Y1;
+        edge RIGHT_Y goto X4Y1_X1Y1;
+        edge UNC_UP_B goto X3Y1_X1Y0;
+        edge UNC_DOWN_B goto X3Y1_X1Y2;
+        edge UNC_LEFT_B goto X3Y1_X0Y1;
+        edge UNC_RIGHT_B goto X3Y1_X2Y1;
+
+    location X3Y1_X2Y1: marked;
+        edge UP_Y goto X3Y0_X2Y1;
+        edge DOWN_Y goto X3Y2_X2Y1;
+        edge RIGHT_Y goto X4Y1_X2Y1;
+        edge UP_B goto X3Y1_X2Y0;
+        edge DOWN_B goto X3Y1_X2Y2;
+        edge LEFT_B goto X3Y1_X1Y1;
+
+    location X3Y1_X4Y1: marked;
+        edge UP_Y goto X3Y0_X4Y1;
+        edge DOWN_Y goto X3Y2_X4Y1;
+        edge LEFT_Y goto X2Y1_X4Y1;
+        edge UP_B goto X3Y1_X4Y0;
+        edge DOWN_B goto X3Y1_X4Y2;
+
+    location X3Y1_X0Y2: marked;
+        edge UP_Y goto X3Y0_X0Y2;
+        edge DOWN_Y goto X3Y2_X0Y2;
+        edge LEFT_Y goto X2Y1_X0Y2;
+        edge RIGHT_Y goto X4Y1_X0Y2;
+        edge UP_B goto X3Y1_X0Y1;
+        edge RIGHT_B goto X3Y1_X1Y2;
+
+    location X3Y1_X1Y2: marked;
+        edge UP_Y goto X3Y0_X1Y2;
+        edge DOWN_Y goto X3Y2_X1Y2;
+        edge LEFT_Y goto X2Y1_X1Y2;
+        edge RIGHT_Y goto X4Y1_X1Y2;
+        edge UP_B goto X3Y1_X1Y1;
+        edge LEFT_B goto X3Y1_X0Y2;
+        edge RIGHT_B goto X3Y1_X2Y2;
+
+    location X3Y1_X2Y2: marked;
+        edge UP_Y goto X3Y0_X2Y2;
+        edge DOWN_Y goto X3Y2_X2Y2;
+        edge LEFT_Y goto X2Y1_X2Y2;
+        edge RIGHT_Y goto X4Y1_X2Y2;
+        edge UP_B goto X3Y1_X2Y1;
+        edge LEFT_B goto X3Y1_X1Y2;
+        edge RIGHT_B goto X3Y1_X3Y2;
+
+    location X3Y1_X3Y2: marked;
+        edge UP_Y goto X3Y0_X3Y2;
+        edge LEFT_Y goto X2Y1_X3Y2;
+        edge RIGHT_Y goto X4Y1_X3Y2;
+        edge LEFT_B goto X3Y1_X2Y2;
+        edge RIGHT_B goto X3Y1_X4Y2;
+
+    location X3Y1_X4Y2: marked;
+        edge UP_Y goto X3Y0_X4Y2;
+        edge DOWN_Y goto X3Y2_X4Y2;
+        edge LEFT_Y goto X2Y1_X4Y2;
+        edge RIGHT_Y goto X4Y1_X4Y2;
+        edge UP_B goto X3Y1_X4Y1;
+        edge LEFT_B goto X3Y1_X3Y2;
+
+    location X4Y1_X0Y0: marked;
+        edge UP_Y goto X4Y0_X0Y0;
+        edge DOWN_Y goto X4Y2_X0Y0;
+        edge LEFT_Y goto X3Y1_X0Y0;
+        edge DOWN_B goto X4Y1_X0Y1;
+        edge RIGHT_B goto X4Y1_X1Y0;
+
+    location X4Y1_X1Y0: marked;
+        edge UP_Y goto X4Y0_X1Y0;
+        edge DOWN_Y goto X4Y2_X1Y0;
+        edge LEFT_Y goto X3Y1_X1Y0;
+        edge DOWN_B goto X4Y1_X1Y1;
+        edge LEFT_B goto X4Y1_X0Y0;
+        edge RIGHT_B goto X4Y1_X2Y0;
+
+    location X4Y1_X2Y0: marked;
+        edge UP_Y goto X4Y0_X2Y0;
+        edge DOWN_Y goto X4Y2_X2Y0;
+        edge LEFT_Y goto X3Y1_X2Y0;
+        edge DOWN_B goto X4Y1_X2Y1;
+        edge LEFT_B goto X4Y1_X1Y0;
+        edge RIGHT_B goto X4Y1_X3Y0;
+
+    location X4Y1_X3Y0: marked;
+        edge UP_Y goto X4Y0_X3Y0;
+        edge DOWN_Y goto X4Y2_X3Y0;
+        edge LEFT_Y goto X3Y1_X3Y0;
+        edge DOWN_B goto X4Y1_X3Y1;
+        edge LEFT_B goto X4Y1_X2Y0;
+        edge RIGHT_B goto X4Y1_X4Y0;
+
+    location X4Y1_X4Y0: marked;
+        edge DOWN_Y goto X4Y2_X4Y0;
+        edge LEFT_Y goto X3Y1_X4Y0;
+        edge LEFT_B goto X4Y1_X3Y0;
+
+    location X4Y1_X0Y1: marked;
+        edge UP_Y goto X4Y0_X0Y1;
+        edge DOWN_Y goto X4Y2_X0Y1;
+        edge LEFT_Y goto X3Y1_X0Y1;
+        edge UP_B goto X4Y1_X0Y0;
+        edge DOWN_B goto X4Y1_X0Y2;
+        edge RIGHT_B goto X4Y1_X1Y1;
+
+    location X4Y1_X1Y1: marked;
+        edge UP_Y goto X4Y0_X1Y1;
+        edge DOWN_Y goto X4Y2_X1Y1;
+        edge LEFT_Y goto X3Y1_X1Y1;
+        edge UNC_UP_B goto X4Y1_X1Y0;
+        edge UNC_DOWN_B goto X4Y1_X1Y2;
+        edge UNC_LEFT_B goto X4Y1_X0Y1;
+        edge UNC_RIGHT_B goto X4Y1_X2Y1;
+
+    location X4Y1_X2Y1: marked;
+        edge UP_Y goto X4Y0_X2Y1;
+        edge DOWN_Y goto X4Y2_X2Y1;
+        edge LEFT_Y goto X3Y1_X2Y1;
+        edge UP_B goto X4Y1_X2Y0;
+        edge DOWN_B goto X4Y1_X2Y2;
+        edge LEFT_B goto X4Y1_X1Y1;
+        edge RIGHT_B goto X4Y1_X3Y1;
+
+    location X4Y1_X3Y1: marked;
+        edge UP_Y goto X4Y0_X3Y1;
+        edge DOWN_Y goto X4Y2_X3Y1;
+        edge UP_B goto X4Y1_X3Y0;
+        edge DOWN_B goto X4Y1_X3Y2;
+        edge LEFT_B goto X4Y1_X2Y1;
+
+    location X4Y1_X0Y2: marked;
+        edge UP_Y goto X4Y0_X0Y2;
+        edge DOWN_Y goto X4Y2_X0Y2;
+        edge LEFT_Y goto X3Y1_X0Y2;
+        edge UP_B goto X4Y1_X0Y1;
+        edge RIGHT_B goto X4Y1_X1Y2;
+
+    location X4Y1_X1Y2: marked;
+        edge UP_Y goto X4Y0_X1Y2;
+        edge DOWN_Y goto X4Y2_X1Y2;
+        edge LEFT_Y goto X3Y1_X1Y2;
+        edge UP_B goto X4Y1_X1Y1;
+        edge LEFT_B goto X4Y1_X0Y2;
+        edge RIGHT_B goto X4Y1_X2Y2;
+
+    location X4Y1_X2Y2: marked;
+        edge UP_Y goto X4Y0_X2Y2;
+        edge DOWN_Y goto X4Y2_X2Y2;
+        edge LEFT_Y goto X3Y1_X2Y2;
+        edge UP_B goto X4Y1_X2Y1;
+        edge LEFT_B goto X4Y1_X1Y2;
+        edge RIGHT_B goto X4Y1_X3Y2;
+
+    location X4Y1_X3Y2: marked;
+        edge UP_Y goto X4Y0_X3Y2;
+        edge DOWN_Y goto X4Y2_X3Y2;
+        edge LEFT_Y goto X3Y1_X3Y2;
+        edge UP_B goto X4Y1_X3Y1;
+        edge LEFT_B goto X4Y1_X2Y2;
+        edge RIGHT_B goto X4Y1_X4Y2;
+
+    location X4Y1_X4Y2: marked;
+        edge UP_Y goto X4Y0_X4Y2;
+        edge LEFT_Y goto X3Y1_X4Y2;
+        edge LEFT_B goto X4Y1_X3Y2;
+
+    location X0Y2_X0Y0: marked;
+        edge UP_Y goto X0Y1_X0Y0;
+        edge RIGHT_Y goto X1Y2_X0Y0;
+        edge DOWN_B goto X0Y2_X0Y1;
+        edge RIGHT_B goto X0Y2_X1Y0;
+
+    location X0Y2_X1Y0: marked;
+        edge UP_Y goto X0Y1_X1Y0;
+        edge RIGHT_Y goto X1Y2_X1Y0;
+        edge DOWN_B goto X0Y2_X1Y1;
+        edge LEFT_B goto X0Y2_X0Y0;
+        edge RIGHT_B goto X0Y2_X2Y0;
+
+    location X0Y2_X2Y0: marked;
+        edge UP_Y goto X0Y1_X2Y0;
+        edge RIGHT_Y goto X1Y2_X2Y0;
+        edge DOWN_B goto X0Y2_X2Y1;
+        edge LEFT_B goto X0Y2_X1Y0;
+        edge RIGHT_B goto X0Y2_X3Y0;
+
+    location X0Y2_X3Y0: marked;
+        edge UP_Y goto X0Y1_X3Y0;
+        edge RIGHT_Y goto X1Y2_X3Y0;
+        edge DOWN_B goto X0Y2_X3Y1;
+        edge LEFT_B goto X0Y2_X2Y0;
+        edge RIGHT_B goto X0Y2_X4Y0;
+
+    location X0Y2_X4Y0: marked;
+        edge UP_Y goto X0Y1_X4Y0;
+        edge RIGHT_Y goto X1Y2_X4Y0;
+        edge DOWN_B goto X0Y2_X4Y1;
+        edge LEFT_B goto X0Y2_X3Y0;
+
+    location X0Y2_X0Y1: marked;
+        edge RIGHT_Y goto X1Y2_X0Y1;
+        edge UP_B goto X0Y2_X0Y0;
+        edge RIGHT_B goto X0Y2_X1Y1;
+
+    location X0Y2_X1Y1: marked;
+        edge UP_Y goto X0Y1_X1Y1;
+        edge RIGHT_Y goto X1Y2_X1Y1;
+        edge UNC_UP_B goto X0Y2_X1Y0;
+        edge UNC_DOWN_B goto X0Y2_X1Y2;
+        edge UNC_LEFT_B goto X0Y2_X0Y1;
+        edge UNC_RIGHT_B goto X0Y2_X2Y1;
+
+    location X0Y2_X2Y1: marked;
+        edge UP_Y goto X0Y1_X2Y1;
+        edge RIGHT_Y goto X1Y2_X2Y1;
+        edge UP_B goto X0Y2_X2Y0;
+        edge DOWN_B goto X0Y2_X2Y2;
+        edge LEFT_B goto X0Y2_X1Y1;
+        edge RIGHT_B goto X0Y2_X3Y1;
+
+    location X0Y2_X3Y1: marked;
+        edge UP_Y goto X0Y1_X3Y1;
+        edge RIGHT_Y goto X1Y2_X3Y1;
+        edge UP_B goto X0Y2_X3Y0;
+        edge DOWN_B goto X0Y2_X3Y2;
+        edge LEFT_B goto X0Y2_X2Y1;
+        edge RIGHT_B goto X0Y2_X4Y1;
+
+    location X0Y2_X4Y1: marked;
+        edge UP_Y goto X0Y1_X4Y1;
+        edge RIGHT_Y goto X1Y2_X4Y1;
+        edge UP_B goto X0Y2_X4Y0;
+        edge DOWN_B goto X0Y2_X4Y2;
+        edge LEFT_B goto X0Y2_X3Y1;
+
+    location X0Y2_X1Y2: marked;
+        edge UP_Y goto X0Y1_X1Y2;
+        edge UP_B goto X0Y2_X1Y1;
+        edge RIGHT_B goto X0Y2_X2Y2;
+
+    location X0Y2_X2Y2: marked;
+        edge UP_Y goto X0Y1_X2Y2;
+        edge RIGHT_Y goto X1Y2_X2Y2;
+        edge UP_B goto X0Y2_X2Y1;
+        edge LEFT_B goto X0Y2_X1Y2;
+        edge RIGHT_B goto X0Y2_X3Y2;
+
+    location X0Y2_X3Y2: marked;
+        edge UP_Y goto X0Y1_X3Y2;
+        edge RIGHT_Y goto X1Y2_X3Y2;
+        edge UP_B goto X0Y2_X3Y1;
+        edge LEFT_B goto X0Y2_X2Y2;
+        edge RIGHT_B goto X0Y2_X4Y2;
+
+    location X0Y2_X4Y2: marked;
+        edge UP_Y goto X0Y1_X4Y2;
+        edge RIGHT_Y goto X1Y2_X4Y2;
+        edge UP_B goto X0Y2_X4Y1;
+        edge LEFT_B goto X0Y2_X3Y2;
+
+    location X1Y2_X0Y0: marked;
+        edge UP_Y goto X1Y1_X0Y0;
+        edge LEFT_Y goto X0Y2_X0Y0;
+        edge RIGHT_Y goto X2Y2_X0Y0;
+        edge DOWN_B goto X1Y2_X0Y1;
+        edge RIGHT_B goto X1Y2_X1Y0;
+
+    location X1Y2_X1Y0: marked;
+        edge UP_Y goto X1Y1_X1Y0;
+        edge LEFT_Y goto X0Y2_X1Y0;
+        edge RIGHT_Y goto X2Y2_X1Y0;
+        edge DOWN_B goto X1Y2_X1Y1;
+        edge LEFT_B goto X1Y2_X0Y0;
+        edge RIGHT_B goto X1Y2_X2Y0;
+
+    location X1Y2_X2Y0: marked;
+        edge UP_Y goto X1Y1_X2Y0;
+        edge LEFT_Y goto X0Y2_X2Y0;
+        edge RIGHT_Y goto X2Y2_X2Y0;
+        edge DOWN_B goto X1Y2_X2Y1;
+        edge LEFT_B goto X1Y2_X1Y0;
+        edge RIGHT_B goto X1Y2_X3Y0;
+
+    location X1Y2_X3Y0: marked;
+        edge UP_Y goto X1Y1_X3Y0;
+        edge LEFT_Y goto X0Y2_X3Y0;
+        edge RIGHT_Y goto X2Y2_X3Y0;
+        edge DOWN_B goto X1Y2_X3Y1;
+        edge LEFT_B goto X1Y2_X2Y0;
+        edge RIGHT_B goto X1Y2_X4Y0;
+
+    location X1Y2_X4Y0: marked;
+        edge UP_Y goto X1Y1_X4Y0;
+        edge LEFT_Y goto X0Y2_X4Y0;
+        edge RIGHT_Y goto X2Y2_X4Y0;
+        edge DOWN_B goto X1Y2_X4Y1;
+        edge LEFT_B goto X1Y2_X3Y0;
+
+    location X1Y2_X0Y1: marked;
+        edge UP_Y goto X1Y1_X0Y1;
+        edge LEFT_Y goto X0Y2_X0Y1;
+        edge RIGHT_Y goto X2Y2_X0Y1;
+        edge UP_B goto X1Y2_X0Y0;
+        edge DOWN_B goto X1Y2_X0Y2;
+        edge RIGHT_B goto X1Y2_X1Y1;
+
+    location X1Y2_X1Y1: marked;
+        edge LEFT_Y goto X0Y2_X1Y1;
+        edge RIGHT_Y goto X2Y2_X1Y1;
+        edge UNC_UP_B goto X1Y2_X1Y0;
+        edge UNC_LEFT_B goto X1Y2_X0Y1;
+        edge UNC_RIGHT_B goto X1Y2_X2Y1;
+
+    location X1Y2_X2Y1: marked;
+        edge UP_Y goto X1Y1_X2Y1;
+        edge LEFT_Y goto X0Y2_X2Y1;
+        edge RIGHT_Y goto X2Y2_X2Y1;
+        edge UP_B goto X1Y2_X2Y0;
+        edge DOWN_B goto X1Y2_X2Y2;
+        edge LEFT_B goto X1Y2_X1Y1;
+        edge RIGHT_B goto X1Y2_X3Y1;
+
+    location X1Y2_X3Y1: marked;
+        edge UP_Y goto X1Y1_X3Y1;
+        edge LEFT_Y goto X0Y2_X3Y1;
+        edge RIGHT_Y goto X2Y2_X3Y1;
+        edge UP_B goto X1Y2_X3Y0;
+        edge DOWN_B goto X1Y2_X3Y2;
+        edge LEFT_B goto X1Y2_X2Y1;
+        edge RIGHT_B goto X1Y2_X4Y1;
+
+    location X1Y2_X4Y1: marked;
+        edge UP_Y goto X1Y1_X4Y1;
+        edge LEFT_Y goto X0Y2_X4Y1;
+        edge RIGHT_Y goto X2Y2_X4Y1;
+        edge UP_B goto X1Y2_X4Y0;
+        edge DOWN_B goto X1Y2_X4Y2;
+        edge LEFT_B goto X1Y2_X3Y1;
+
+    location X1Y2_X0Y2: marked;
+        edge UP_Y goto X1Y1_X0Y2;
+        edge RIGHT_Y goto X2Y2_X0Y2;
+        edge UP_B goto X1Y2_X0Y1;
+
+    location X1Y2_X2Y2: marked;
+        edge UP_Y goto X1Y1_X2Y2;
+        edge LEFT_Y goto X0Y2_X2Y2;
+        edge UP_B goto X1Y2_X2Y1;
+        edge RIGHT_B goto X1Y2_X3Y2;
+
+    location X1Y2_X3Y2: marked;
+        edge UP_Y goto X1Y1_X3Y2;
+        edge LEFT_Y goto X0Y2_X3Y2;
+        edge RIGHT_Y goto X2Y2_X3Y2;
+        edge UP_B goto X1Y2_X3Y1;
+        edge LEFT_B goto X1Y2_X2Y2;
+        edge RIGHT_B goto X1Y2_X4Y2;
+
+    location X1Y2_X4Y2: marked;
+        edge UP_Y goto X1Y1_X4Y2;
+        edge LEFT_Y goto X0Y2_X4Y2;
+        edge RIGHT_Y goto X2Y2_X4Y2;
+        edge UP_B goto X1Y2_X4Y1;
+        edge LEFT_B goto X1Y2_X3Y2;
+
+    location X2Y2_X0Y0: marked;
+        edge UP_Y goto X2Y1_X0Y0;
+        edge LEFT_Y goto X1Y2_X0Y0;
+        edge RIGHT_Y goto X3Y2_X0Y0;
+        edge DOWN_B goto X2Y2_X0Y1;
+        edge RIGHT_B goto X2Y2_X1Y0;
+
+    location X2Y2_X1Y0: marked;
+        edge UP_Y goto X2Y1_X1Y0;
+        edge LEFT_Y goto X1Y2_X1Y0;
+        edge RIGHT_Y goto X3Y2_X1Y0;
+        edge DOWN_B goto X2Y2_X1Y1;
+        edge LEFT_B goto X2Y2_X0Y0;
+        edge RIGHT_B goto X2Y2_X2Y0;
+
+    location X2Y2_X2Y0: marked;
+        edge UP_Y goto X2Y1_X2Y0;
+        edge LEFT_Y goto X1Y2_X2Y0;
+        edge RIGHT_Y goto X3Y2_X2Y0;
+        edge DOWN_B goto X2Y2_X2Y1;
+        edge LEFT_B goto X2Y2_X1Y0;
+        edge RIGHT_B goto X2Y2_X3Y0;
+
+    location X2Y2_X3Y0: marked;
+        edge UP_Y goto X2Y1_X3Y0;
+        edge LEFT_Y goto X1Y2_X3Y0;
+        edge RIGHT_Y goto X3Y2_X3Y0;
+        edge DOWN_B goto X2Y2_X3Y1;
+        edge LEFT_B goto X2Y2_X2Y0;
+        edge RIGHT_B goto X2Y2_X4Y0;
+
+    location X2Y2_X4Y0: marked;
+        edge UP_Y goto X2Y1_X4Y0;
+        edge LEFT_Y goto X1Y2_X4Y0;
+        edge RIGHT_Y goto X3Y2_X4Y0;
+        edge DOWN_B goto X2Y2_X4Y1;
+        edge LEFT_B goto X2Y2_X3Y0;
+
+    location X2Y2_X0Y1: marked;
+        edge UP_Y goto X2Y1_X0Y1;
+        edge LEFT_Y goto X1Y2_X0Y1;
+        edge RIGHT_Y goto X3Y2_X0Y1;
+        edge UP_B goto X2Y2_X0Y0;
+        edge DOWN_B goto X2Y2_X0Y2;
+        edge RIGHT_B goto X2Y2_X1Y1;
+
+    location X2Y2_X1Y1: marked;
+        edge UP_Y goto X2Y1_X1Y1;
+        edge LEFT_Y goto X1Y2_X1Y1;
+        edge RIGHT_Y goto X3Y2_X1Y1;
+        edge UNC_UP_B goto X2Y2_X1Y0;
+        edge UNC_DOWN_B goto X2Y2_X1Y2;
+        edge UNC_LEFT_B goto X2Y2_X0Y1;
+        edge UNC_RIGHT_B goto X2Y2_X2Y1;
+
+    location X2Y2_X2Y1: marked;
+        edge LEFT_Y goto X1Y2_X2Y1;
+        edge RIGHT_Y goto X3Y2_X2Y1;
+        edge UP_B goto X2Y2_X2Y0;
+        edge LEFT_B goto X2Y2_X1Y1;
+        edge RIGHT_B goto X2Y2_X3Y1;
+
+    location X2Y2_X3Y1: marked;
+        edge UP_Y goto X2Y1_X3Y1;
+        edge LEFT_Y goto X1Y2_X3Y1;
+        edge RIGHT_Y goto X3Y2_X3Y1;
+        edge UP_B goto X2Y2_X3Y0;
+        edge DOWN_B goto X2Y2_X3Y2;
+        edge LEFT_B goto X2Y2_X2Y1;
+        edge RIGHT_B goto X2Y2_X4Y1;
+
+    location X2Y2_X4Y1: marked;
+        edge UP_Y goto X2Y1_X4Y1;
+        edge LEFT_Y goto X1Y2_X4Y1;
+        edge RIGHT_Y goto X3Y2_X4Y1;
+        edge UP_B goto X2Y2_X4Y0;
+        edge DOWN_B goto X2Y2_X4Y2;
+        edge LEFT_B goto X2Y2_X3Y1;
+
+    location X2Y2_X0Y2: marked;
+        edge UP_Y goto X2Y1_X0Y2;
+        edge LEFT_Y goto X1Y2_X0Y2;
+        edge RIGHT_Y goto X3Y2_X0Y2;
+        edge UP_B goto X2Y2_X0Y1;
+        edge RIGHT_B goto X2Y2_X1Y2;
+
+    location X2Y2_X1Y2: marked;
+        edge UP_Y goto X2Y1_X1Y2;
+        edge RIGHT_Y goto X3Y2_X1Y2;
+        edge UP_B goto X2Y2_X1Y1;
+        edge LEFT_B goto X2Y2_X0Y2;
+
+    location X2Y2_X3Y2: marked;
+        edge UP_Y goto X2Y1_X3Y2;
+        edge LEFT_Y goto X1Y2_X3Y2;
+        edge UP_B goto X2Y2_X3Y1;
+        edge RIGHT_B goto X2Y2_X4Y2;
+
+    location X2Y2_X4Y2: marked;
+        edge UP_Y goto X2Y1_X4Y2;
+        edge LEFT_Y goto X1Y2_X4Y2;
+        edge RIGHT_Y goto X3Y2_X4Y2;
+        edge UP_B goto X2Y2_X4Y1;
+        edge LEFT_B goto X2Y2_X3Y2;
+
+    location X3Y2_X0Y0: marked;
+        edge UP_Y goto X3Y1_X0Y0;
+        edge LEFT_Y goto X2Y2_X0Y0;
+        edge RIGHT_Y goto X4Y2_X0Y0;
+        edge DOWN_B goto X3Y2_X0Y1;
+        edge RIGHT_B goto X3Y2_X1Y0;
+
+    location X3Y2_X1Y0: marked;
+        edge UP_Y goto X3Y1_X1Y0;
+        edge LEFT_Y goto X2Y2_X1Y0;
+        edge RIGHT_Y goto X4Y2_X1Y0;
+        edge DOWN_B goto X3Y2_X1Y1;
+        edge LEFT_B goto X3Y2_X0Y0;
+        edge RIGHT_B goto X3Y2_X2Y0;
+
+    location X3Y2_X2Y0: marked;
+        edge UP_Y goto X3Y1_X2Y0;
+        edge LEFT_Y goto X2Y2_X2Y0;
+        edge RIGHT_Y goto X4Y2_X2Y0;
+        edge DOWN_B goto X3Y2_X2Y1;
+        edge LEFT_B goto X3Y2_X1Y0;
+        edge RIGHT_B goto X3Y2_X3Y0;
+
+    location X3Y2_X3Y0: marked;
+        edge UP_Y goto X3Y1_X3Y0;
+        edge LEFT_Y goto X2Y2_X3Y0;
+        edge RIGHT_Y goto X4Y2_X3Y0;
+        edge DOWN_B goto X3Y2_X3Y1;
+        edge LEFT_B goto X3Y2_X2Y0;
+        edge RIGHT_B goto X3Y2_X4Y0;
+
+    location X3Y2_X4Y0: marked;
+        edge UP_Y goto X3Y1_X4Y0;
+        edge LEFT_Y goto X2Y2_X4Y0;
+        edge RIGHT_Y goto X4Y2_X4Y0;
+        edge DOWN_B goto X3Y2_X4Y1;
+        edge LEFT_B goto X3Y2_X3Y0;
+
+    location X3Y2_X0Y1: marked;
+        edge UP_Y goto X3Y1_X0Y1;
+        edge LEFT_Y goto X2Y2_X0Y1;
+        edge RIGHT_Y goto X4Y2_X0Y1;
+        edge UP_B goto X3Y2_X0Y0;
+        edge DOWN_B goto X3Y2_X0Y2;
+        edge RIGHT_B goto X3Y2_X1Y1;
+
+    location X3Y2_X1Y1: marked;
+        edge UP_Y goto X3Y1_X1Y1;
+        edge LEFT_Y goto X2Y2_X1Y1;
+        edge RIGHT_Y goto X4Y2_X1Y1;
+        edge UNC_UP_B goto X3Y2_X1Y0;
+        edge UNC_DOWN_B goto X3Y2_X1Y2;
+        edge UNC_LEFT_B goto X3Y2_X0Y1;
+        edge UNC_RIGHT_B goto X3Y2_X2Y1;
+
+    location X3Y2_X2Y1: marked;
+        edge UP_Y goto X3Y1_X2Y1;
+        edge LEFT_Y goto X2Y2_X2Y1;
+        edge RIGHT_Y goto X4Y2_X2Y1;
+        edge UP_B goto X3Y2_X2Y0;
+        edge DOWN_B goto X3Y2_X2Y2;
+        edge LEFT_B goto X3Y2_X1Y1;
+        edge RIGHT_B goto X3Y2_X3Y1;
+
+    location X3Y2_X3Y1: marked;
+        edge LEFT_Y goto X2Y2_X3Y1;
+        edge RIGHT_Y goto X4Y2_X3Y1;
+        edge UP_B goto X3Y2_X3Y0;
+        edge LEFT_B goto X3Y2_X2Y1;
+        edge RIGHT_B goto X3Y2_X4Y1;
+
+    location X3Y2_X4Y1: marked;
+        edge UP_Y goto X3Y1_X4Y1;
+        edge LEFT_Y goto X2Y2_X4Y1;
+        edge RIGHT_Y goto X4Y2_X4Y1;
+        edge UP_B goto X3Y2_X4Y0;
+        edge DOWN_B goto X3Y2_X4Y2;
+        edge LEFT_B goto X3Y2_X3Y1;
+
+    location X3Y2_X0Y2: marked;
+        edge UP_Y goto X3Y1_X0Y2;
+        edge LEFT_Y goto X2Y2_X0Y2;
+        edge RIGHT_Y goto X4Y2_X0Y2;
+        edge UP_B goto X3Y2_X0Y1;
+        edge RIGHT_B goto X3Y2_X1Y2;
+
+    location X3Y2_X1Y2: marked;
+        edge UP_Y goto X3Y1_X1Y2;
+        edge LEFT_Y goto X2Y2_X1Y2;
+        edge RIGHT_Y goto X4Y2_X1Y2;
+        edge UP_B goto X3Y2_X1Y1;
+        edge LEFT_B goto X3Y2_X0Y2;
+        edge RIGHT_B goto X3Y2_X2Y2;
+
+    location X3Y2_X2Y2: marked;
+        edge UP_Y goto X3Y1_X2Y2;
+        edge RIGHT_Y goto X4Y2_X2Y2;
+        edge UP_B goto X3Y2_X2Y1;
+        edge LEFT_B goto X3Y2_X1Y2;
+
+    location X3Y2_X4Y2: marked;
+        edge UP_Y goto X3Y1_X4Y2;
+        edge LEFT_Y goto X2Y2_X4Y2;
+        edge UP_B goto X3Y2_X4Y1;
+
+    location X4Y2_X0Y0: marked;
+        edge UP_Y goto X4Y1_X0Y0;
+        edge LEFT_Y goto X3Y2_X0Y0;
+        edge DOWN_B goto X4Y2_X0Y1;
+        edge RIGHT_B goto X4Y2_X1Y0;
+
+    location X4Y2_X1Y0: marked;
+        edge UP_Y goto X4Y1_X1Y0;
+        edge LEFT_Y goto X3Y2_X1Y0;
+        edge DOWN_B goto X4Y2_X1Y1;
+        edge LEFT_B goto X4Y2_X0Y0;
+        edge RIGHT_B goto X4Y2_X2Y0;
+
+    location X4Y2_X2Y0: marked;
+        edge UP_Y goto X4Y1_X2Y0;
+        edge LEFT_Y goto X3Y2_X2Y0;
+        edge DOWN_B goto X4Y2_X2Y1;
+        edge LEFT_B goto X4Y2_X1Y0;
+        edge RIGHT_B goto X4Y2_X3Y0;
+
+    location X4Y2_X3Y0: marked;
+        edge UP_Y goto X4Y1_X3Y0;
+        edge LEFT_Y goto X3Y2_X3Y0;
+        edge DOWN_B goto X4Y2_X3Y1;
+        edge LEFT_B goto X4Y2_X2Y0;
+        edge RIGHT_B goto X4Y2_X4Y0;
+
+    location X4Y2_X4Y0: marked;
+        edge UP_Y goto X4Y1_X4Y0;
+        edge LEFT_Y goto X3Y2_X4Y0;
+        edge DOWN_B goto X4Y2_X4Y1;
+        edge LEFT_B goto X4Y2_X3Y0;
+
+    location X4Y2_X0Y1: marked;
+        edge UP_Y goto X4Y1_X0Y1;
+        edge LEFT_Y goto X3Y2_X0Y1;
+        edge UP_B goto X4Y2_X0Y0;
+        edge DOWN_B goto X4Y2_X0Y2;
+        edge RIGHT_B goto X4Y2_X1Y1;
+
+    location X4Y2_X1Y1: marked;
+        edge UP_Y goto X4Y1_X1Y1;
+        edge LEFT_Y goto X3Y2_X1Y1;
+        edge UNC_UP_B goto X4Y2_X1Y0;
+        edge UNC_DOWN_B goto X4Y2_X1Y2;
+        edge UNC_LEFT_B goto X4Y2_X0Y1;
+        edge UNC_RIGHT_B goto X4Y2_X2Y1;
+
+    location X4Y2_X2Y1: marked;
+        edge UP_Y goto X4Y1_X2Y1;
+        edge LEFT_Y goto X3Y2_X2Y1;
+        edge UP_B goto X4Y2_X2Y0;
+        edge DOWN_B goto X4Y2_X2Y2;
+        edge LEFT_B goto X4Y2_X1Y1;
+        edge RIGHT_B goto X4Y2_X3Y1;
+
+    location X4Y2_X3Y1: marked;
+        edge UP_Y goto X4Y1_X3Y1;
+        edge LEFT_Y goto X3Y2_X3Y1;
+        edge UP_B goto X4Y2_X3Y0;
+        edge DOWN_B goto X4Y2_X3Y2;
+        edge LEFT_B goto X4Y2_X2Y1;
+        edge RIGHT_B goto X4Y2_X4Y1;
+
+    location X4Y2_X4Y1: marked;
+        edge LEFT_Y goto X3Y2_X4Y1;
+        edge UP_B goto X4Y2_X4Y0;
+        edge LEFT_B goto X4Y2_X3Y1;
+
+    location X4Y2_X0Y2: marked;
+        edge UP_Y goto X4Y1_X0Y2;
+        edge LEFT_Y goto X3Y2_X0Y2;
+        edge UP_B goto X4Y2_X0Y1;
+        edge RIGHT_B goto X4Y2_X1Y2;
+
+    location X4Y2_X1Y2: marked;
+        edge UP_Y goto X4Y1_X1Y2;
+        edge LEFT_Y goto X3Y2_X1Y2;
+        edge UP_B goto X4Y2_X1Y1;
+        edge LEFT_B goto X4Y2_X0Y2;
+        edge RIGHT_B goto X4Y2_X2Y2;
+
+    location X4Y2_X2Y2: marked;
+        edge UP_Y goto X4Y1_X2Y2;
+        edge LEFT_Y goto X3Y2_X2Y2;
+        edge UP_B goto X4Y2_X2Y1;
+        edge LEFT_B goto X4Y2_X1Y2;
+        edge RIGHT_B goto X4Y2_X3Y2;
+
+    location X4Y2_X3Y2: marked;
+        edge UP_Y goto X4Y1_X3Y2;
+        edge UP_B goto X4Y2_X3Y1;
+        edge LEFT_B goto X4Y2_X2Y2;
+
+end

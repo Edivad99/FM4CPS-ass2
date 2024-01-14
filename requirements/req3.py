@@ -12,8 +12,6 @@ def prefix_if_uncontrollable(x: int, y: int, event: str) -> str:
 def generate_moves(rows: int, columns: int):
   moves = {}
 
-  # Mosse del giallo
-
   for yellow_index in range(rows * columns):
     yellow_x = yellow_index % 5
     yellow_y = int(yellow_index / 5)
@@ -28,6 +26,7 @@ def generate_moves(rows: int, columns: int):
       if key not in moves:
         moves[key] = []
 
+      ## YELLOW
       # Muovi verso l'alto
       if yellow_y > 0 and (blue_y != yellow_y - 1 or blue_x != yellow_x):
         moves[key].append(f"edge {prefix_if_uncontrollable(yellow_x, yellow_y, 'UP_Y')} goto {gen_state((yellow_x, yellow_y - 1), (blue_x, blue_y))}")
@@ -44,20 +43,7 @@ def generate_moves(rows: int, columns: int):
       if yellow_x < columns - 1 and (blue_x != yellow_x + 1 or blue_y != yellow_y):
         moves[key].append(f"edge {prefix_if_uncontrollable(yellow_x, yellow_y, 'RIGHT_Y')} goto {gen_state((yellow_x + 1, yellow_y), (blue_x, blue_y))}")
 
-  # Mosse del blu
-        
-  for blue_index in range(rows * columns):
-    blue_x = blue_index % 5
-    blue_y = int(blue_index / 5)
-
-    for yellow_index in range(rows * columns):
-      if yellow_index == blue_index:
-        continue
-      yellow_x = yellow_index % 5
-      yellow_y = int(yellow_index / 5)
-
-      key = gen_state((yellow_x, yellow_y), (blue_x, blue_y))
-
+      ## BLUE
       # Muovi verso l'alto
       if blue_y > 0 and (blue_y - 1 != yellow_y or blue_x != yellow_x):
         moves[key].append(f"edge {prefix_if_uncontrollable(blue_x, blue_y, 'UP_B')} goto {gen_state((yellow_x, yellow_y), (blue_x, blue_y - 1))}")
